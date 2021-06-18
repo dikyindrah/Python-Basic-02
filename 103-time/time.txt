@@ -1,0 +1,42 @@
+Catatan:
+
+time
+
+time adalah modul yang bisa kita gunakan untuk menangani 
+tugas-tugas yang berhubungan dengan waktu. Berbeda dengan
+modul datetime yang digunakan untuk memanipulasi tanggal
+dan waktu, modul time lebih cenderung digunakan untuk 
+Akses waktu dan konversi. Salah satu contoh penggunaan
+paling umum dari modul time adalah menjeda waktu eksekusi
+suatu pernyataan, untuk melakukanya kita bisa menggunakan
+fungsi sleep() dari modul ini.
+
+Contoh:
+
+import time as tm
+
+print('\nProgram mulai...')
+
+for i in range(5):
+    print(i+1)
+    tm.sleep(2.0)
+
+print('Program berakhir...')
+
+Output:
+
+Program mulai...
+1
+2
+3
+4
+5
+Program berakhir...
+
+Pada kode program diatas, kita mengatur agar pernyataan 
+didalam perulangan di eksekusi dengan jeda waktu 2 detik.
+
+
+Referensi:
+
+1.  
