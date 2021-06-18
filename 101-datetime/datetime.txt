@@ -1,0 +1,148 @@
+Catatan:
+
+datetime
+
+datetime adalah modul bawaan python yang bisa kita 
+gunakan untuk memanipulasi tanggal dan waktu.
+Dengan modul ini, kita bisa melakukan banyak hal
+dengan tanggal dan waktu. Contoh penggunaan sederhana
+nya kita bisa menampilkan tangal dan waktu saat ini.
+
+Contoh:
+
+import datetime as dt
+
+# Menampilkan tanggal dan waktu saat ini
+tanggal_dan_waktu_saat_ini = dt.datetime.now()
+print('Tanggal dan waktu saat ini : {}'.format(tanggal_dan_waktu_saat_ini))
+
+
+Output:
+
+Tanggal dan waktu saat ini : 2021-06-18 08:02:23.390888
+
+
+Pada kode program diatas, kita mengimport modul datetime
+yang kita namai ulang dengan kata 'dt'. Kemudian kita 
+menginstance kelas datetime dari modul dt dan menggunakan
+method now() untuk mengetahui tangal dan waktu saat ini.
+
+Keluaran yang dihasilkan adalah informasi berupa tahun,
+bulan, tanggal, dan waktu dalam hitungan jam, menit,
+dan detik.
+
+
+Modul datetime menyediakan tiga kelas yang bisa kita 
+gunakan, diantaranya:
+
+[-] date     - Mendefinisikan tanggal. Objek ini berisi 
+               tahun (year), bulan (month), hari (day)
+               sebagai atribut.
+[-] time     - Mendefinisikan waktu. Objek ini berisi
+               jam (hour), menit (menute), detik (second).
+[-] datetime - Mendefinisikan tanggal dan waktu. Kelas
+               ini adalah kombinasi dari kelas date dan 
+               time.
+
+
+Kelas date
+
+Kelas date mendefinisikan tanggal. Objek ini berisi 
+tahun (year), bulan (month), hari (day) sebagai atribut.
+
+Contoh:
+
+# Kelas date
+# Menampilkan tanggal saat ini
+tanggal_saat_ini = dt.date.today()
+print('Saat ini adalah tanggal {}'.format(tanggal_saat_ini))
+
+# Mengatur urutan pada tanggal saat ini
+tgl = tanggal_saat_ini.day
+bln = tanggal_saat_ini.month
+thn = tanggal_saat_ini.year
+print('Saat ini adalah tanggal {}-{}-{}'.format(tgl, bln, thn))
+
+# Menentukan tanggal sesuai dengan keinginan
+tanggal_lahir_ucup = dt.date(year=1999, month=11, day=27)
+print('Tanggal lahir ucup adalah {}'.format(tanggal_lahir_ucup))
+
+Output:
+
+Saat ini adalah tanggal 2021-06-18
+Saat ini adalah tanggal 18-6-2021
+Tanggal lahir ucup adalah 1999-11-27
+
+
+Kelas time
+
+Mendefinisikan waktu. Objek ini berisi jam (hour), 
+menit (menute), detik (second).
+
+Contoh:
+
+# Kelas time
+# Menampilkan waktu saat ini
+now = dt.datetime.now()
+waktu_saat_ini = dt.time(now.hour, now.minute, now.second)
+print('Waktu saat ini {}'.format(waktu_saat_ini))
+
+# Menentukan waktu sesuai dengan keinginan
+waktu_makan_siang = dt.time(hour=11, minute=30, second=5)
+print('Waktu makan siang adalah {}'.format(waktu_makan_siang))
+
+Output:
+
+Waktu saat ini 09:00:49
+Waktu makan siang adalah 11:30:05
+
+
+Kelas datetime
+
+Mendefinisikan tanggal dan waktu. Kelas ini adalah kombinasi 
+dari kelas date dan time.
+
+Contoh:
+
+# Kelas datetime
+# Menampilkan tanggal saat ini
+tanggal = dt.datetime.now().date()
+print('Tanggal saat ini : {}'.format(tanggal))
+
+# Menampilkan waktu saat ini
+waktu = dt.datetime.now().time()
+print('Waktu saat ini : {}'.format(waktu))
+
+# Mengatur urutan pada tanggal dan waktu saat ini
+saat_ini = dt.datetime.now()
+
+tgl = saat_ini.day
+bln = saat_ini.month
+thn = saat_ini.year
+
+jam = saat_ini.hour
+mnt = saat_ini.minute
+dtk = saat_ini.second
+
+print('Tanggal saat ini {}-{}-{}'.format(tgl, bln, thn))
+print('Waktu saat ini {}:{}:{}'.format(jam, mnt, dtk))
+
+
+Output:
+
+Tanggal saat ini : 2021-06-18
+Waktu saat ini : 09:32:46.521122
+Tanggal saat ini 18-6-2021
+Waktu saat ini 9:32:46
+
+Referensi:
+
+1.  https://realpython.com/python-datetime/
+2.  https://salama13.wordpress.com/2018/01/30/
+    sistem-waktu-pada-komputer/
+3.  https://docs.python.org/3.8/library/datetime.
+    html#module-datetime
+4.  https://www.programiz.com/python-programming/
+    datetime
+5.  https://www.geeksforgeeks.org/get-current-
+    date-and-time-using-python/
