@@ -40,9 +40,10 @@ print('Tanggal saat ini : {}'.format(tanggal))
 waktu = dt.datetime.now().time()
 print('Waktu saat ini : {}'.format(waktu))
 
-# Mengatur urutan pada tanggal dan waktu saat ini
+# Mengatur urutan atau memformat tanggal dan waktu
 saat_ini = dt.datetime.now()
 
+# Menggunakan cara manual
 tgl = saat_ini.day
 bln = saat_ini.month
 thn = saat_ini.year
@@ -53,3 +54,32 @@ dtk = saat_ini.second
 
 print('Tanggal saat ini {}-{}-{}'.format(tgl, bln, thn))
 print('Waktu saat ini {}:{}:{}'.format(jam, mnt, dtk))
+
+# Menggunakan method strftime()
+strf_format_tgl_1 = saat_ini.strftime('%d/%m/%Y')
+strf_format_tgl_2 = saat_ini.strftime('%d-%m-%Y')
+strf_format_wkt_1 = saat_ini.strftime('%H:%M:%S')
+strf_format_wkt_2 = saat_ini.strftime('%H.%M.%S')
+
+print('Format tanggal 1 : {}'.format(strf_format_tgl_1))
+print('Format tanggal 2 : {}'.format(strf_format_tgl_2))
+print('Format waktu 1 : {}'.format(strf_format_wkt_1))
+print('Format waktu 2 : {}'.format(strf_format_wkt_2))
+
+# Membuat Objek datetime Dari String Menggunakan Method strptime()
+str_tgl = '27 November 1999'
+str_wkt = '12:30:12'
+str_tgl_wkt = '27 November 1999 12:30:12'
+
+strp_format_tgl = dt.datetime.strptime(str_tgl, '%d %B %Y')
+strp_format_wkt = dt.datetime.strptime(str_wkt, '%H:%M:%S')
+strp_format_tgl_wkt = dt.datetime.strptime(str_tgl_wkt, '%d %B %Y %H:%M:%S')
+
+print('String tanggal : {}, {}'.format(str_tgl, type(str_tgl)))
+print('Objek datetime dari string tanggal : {}, {}'.format(strp_format_tgl, type(strp_format_tgl)))
+
+print('String waktu : {}, {}'.format(str_wkt, type(str_wkt)))
+print('Objek datetime dari string waktu : {}, {}'.format(strp_format_wkt, type(strp_format_wkt)))
+
+print('String tanggal dan waktu : {}, {}'.format(str_tgl_wkt, type(str_tgl_wkt)))
+print('Objek datetime dari string tanggal dan waktu : {}, {}'.format(strp_format_tgl_wkt, type(strp_format_tgl_wkt)))
