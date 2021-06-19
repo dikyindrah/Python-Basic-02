@@ -37,6 +37,76 @@ Pada kode program diatas, kita mengatur agar pernyataan
 didalam perulangan di eksekusi dengan jeda waktu 2 detik.
 
 
+Tidak hanya itu modul time memiliki sejumlah method atau 
+fungsi yang bisa kita gunakan untuk berbagai kerperluan
+yang berhubungan dengan akses waktu dan konversi.
+
+time()
+
+time() bisa kita gunakan untuk mengetahui sudah berapa 
+banyak detik yang berlalu sejak waktu pada komputer 
+pertama kali ditentukan ('1 Januari 1970') hingga saat 
+ini.
+
+Contoh:
+
+import time as tm
+
+# time()
+detik = tm.time()
+print(detik)
+
+Output:
+
+1624069207.1312265
+
+
+ctime()
+
+ctime() bisa kita gunakan untuk mengetahui tanggal dan waktu 
+dari detik yang telah ditentukan. Argumen dari fungsi ini
+adalah detik yang kita berikan.
+
+Contoh:
+
+# ctime
+# Mengetahui tanggal dan waktu saat pertama kali 
+# ditentukan
+tgl_wkt_pertama = tm.ctime(0.0)
+print(tgl_wkt_pertama)
+
+# Mengetahui tanggal dan waktu saat ini
+detik = tm.time()
+tgl_wkt_saat_ini = tm.ctime(detik)
+print(tgl_wkt_saat_ini)
+
+
+Output:
+
+Thu Jan  1 07:00:00 1970
+Sat Jun 19 09:50:58 2021
+
+
+sleep()
+
+sleep() bisa kita gunakan untuk menjeda waktu
+eksekusi suatu pernyataan. Argumen dari fungsi
+ini adalah berapa lama waktu jeda yang ingin 
+kita berikan.
+
+Contoh:
+
+print('Program dimulai...')
+tm.sleep(2.0)
+print('Program selesai...')
+
+Output:
+
+Program dimulai...
+Program selesai..
+
+
 Referensi:
 
-1.  
+1.  https://www.programiz.com/python-programming/time
+2.  https://www.programiz.com/python-programming/time/sleep
