@@ -106,6 +106,115 @@ Program dimulai...
 Program selesai..
 
 
+localtime()
+
+localtime() bisa kita gunakan untuk mengetahui 
+tanggal dan waktu lokal dari detik yang telah ditentukan. 
+Argumen dari fungsi ini adalah detik yang kita berikan, 
+jika tidak ada argumen yang diberikan maka nilai yang 
+dikembalikan oleh fungsi time() digunakan.
+
+Ini hampir mirip dengan fungsi ctime(), namun di fungsi
+localtime() kita bisa mendapatkan tanggal dan waktu
+secara terpisah.
+
+Contoh:
+
+# locltime
+waktu_lokal = tm.localtime(1890232121)
+
+# Struktur waktu dari kelas struct_tim()
+print(waktu_lokal)
+
+tgl = waktu_lokal.tm_mday
+bln = waktu_lokal.tm_mon
+thn = waktu_lokal.tm_year
+jam = waktu_lokal.tm_hour
+mnt = waktu_lokal.tm_min
+dtk = waktu_lokal.tm_sec
+
+print('{}-{}-{} {}:{}:{}'.format(tgl, bln, thn, jam, mnt, dtk))
+
+Output:
+
+time.struct_time(tm_year=2029, tm_mon=11, tm_mday=24, 
+tm_hour=23, tm_min=28, tm_sec=41, tm_wday=5, tm_yday=328, 
+tm_isdst=0)
+
+24-11-2029 23:28:41
+
+
+gmtime()
+
+gmtime() bisa kita gunakan untuk mengetahui tanggal 
+dan waktu UTC dari detik yang telah ditentukan. 
+Argumen dari fungsi ini adalah detik yang kita berikan, 
+jika tidak ada argumen yang diberikan maka nilai yang 
+dikembalikan oleh fungsi time() digunakan.
+
+Contoh:
+
+# gmtime
+waktu_utc = tm.gmtime(1545925769)
+
+# Struktur waktu dari kelas struct_tim()
+print(waktu_utc)
+
+tgl = waktu_utc.tm_mday
+bln = waktu_utc.tm_mon
+thn = waktu_utc.tm_year
+jam = waktu_utc.tm_hour
+mnt = waktu_utc.tm_min
+dtk = waktu_utc.tm_sec
+
+print('{}-{}-{} {}:{}:{}'.format(tgl, bln, thn, jam, mnt, dtk))
+
+
+Output:
+
+time.struct_time(tm_year=2018, tm_mon=12, tm_mday=27, 
+tm_hour=15, tm_min=49, tm_sec=29, tm_wday=3, tm_yday=361, 
+tm_isdst=0)
+
+27-12-2018 15:49:29
+
+
+mktime()
+
+mktime() bisa kita gunakan untuk mengetahui detik
+pada tanggal dan waktu yang ditentukan. Argumen
+dari fungsi ini adalah tanggal dan waktu yang kita 
+berikan.
+
+Contoh:
+
+# mktime()
+t = (1999, 11, 27, 0, 0, 0, 0, 0, 0)
+waktu_mk = tm.mktime(t)
+print(waktu_mk)
+
+Output:
+
+943635600.0
+
+
+asctime()
+
+asctime() bisa kita gunakan untuk mengubah struktur waktu
+yang kita berikan kedalam bentuk string yang mewakili itu.
+
+Contoh:
+
+# asctime()
+t = (1999, 11, 27, 0, 0, 0, 0, 0, 0)
+waktu_asc = tm.asctime(t)
+print(waktu_asc)
+
+Output:
+
+Mon Nov 27 00:00:00 1999
+
+
 Referensi:
 
 1.  https://www.programiz.com/python-programming/time
