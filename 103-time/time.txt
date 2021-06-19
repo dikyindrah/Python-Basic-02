@@ -215,6 +215,63 @@ Output:
 Mon Nov 27 00:00:00 1999
 
 
+strftime()
+
+strftime() bisa kita gunakan untuk memformaat waktu
+dan tanggal pada modul time. Argumen yang digunakan 
+pada fungsi ini adalah format waktu, tanggal dan 
+informasi dari kelas struct_time.
+
+format waktu dan tanggal yang bisa kita gunakan,
+diantaranya:
+
+[-] %Y - tahun [0001,..., 2018, 2019,..., 9999]
+[-] %m - bulan dalam angka [01, 02, ..., 11, 12]
+[-] %B - bulan dalam nama [Januari, Februari, ..., Desember]
+[-] %d - hari  [01, 02, ..., 30, 31]
+[-] %H - jam   [00, 01, ..., 22, 23
+[-] %M - menit [00, 01, ..., 58, 59]
+[-] %S - detik [00, 01, ..., 58, 61]
+
+Contoh:
+
+# strftime()
+waktu = tm.localtime()
+format_waktu = tm.strftime('%H:%M:%S', waktu)
+print(format_waktu)
+
+tanggal = tm.localtime()
+format_tanggal = tm.strftime('%d-%m-%Y', tanggal)
+print(format_tanggal)
+
+Output:
+
+19:54:11
+19-06-2021
+
+
+strptime()
+
+strptime() bisa kita gunakan untuk mengubah waktu dalam
+bentuk string ke bentuk objek time. yang perlu diperhatikan
+adalah urutan penulisan dan format penulisan.
+
+Contoh:
+
+# srtptime
+str_waktu = '27 November 1999 12:30:45'
+obj_waktu = tm.strptime(str_waktu, '%d %B %Y %H:%M:%S')
+print(obj_waktu)
+
+waktu_asc = tm.asctime(obj_waktu)
+print(waktu_asc)
+
+Output:
+
+time.struct_time(tm_year=1999, tm_mon=11, tm_mday=27, tm_hour=12, tm_min=30, tm_sec=45, tm_wday=5, tm_yday=331, tm_isdst=-1)
+Sat Nov 27 12:30:45 1999
+
+
 Referensi:
 
 1.  https://www.programiz.com/python-programming/time

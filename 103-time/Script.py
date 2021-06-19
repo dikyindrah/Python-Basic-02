@@ -70,3 +70,20 @@ print(waktu_mk)
 t = (1999, 11, 27, 0, 0, 0, 0, 0, 0)
 waktu_asc = tm.asctime(t)
 print(waktu_asc)
+
+# strftime()
+waktu = tm.localtime()
+format_waktu = tm.strftime('%H:%M:%S', waktu)
+print(format_waktu)
+
+tanggal = tm.localtime()
+format_tanggal = tm.strftime('%d-%m-%Y', tanggal)
+print(format_tanggal)
+
+# srtptime
+str_waktu = '27 November 1999 12:30:45'
+obj_waktu = tm.strptime(str_waktu, '%d %B %Y %H:%M:%S')
+print(obj_waktu)
+
+waktu_asc = tm.asctime(obj_waktu)
+print(waktu_asc)
