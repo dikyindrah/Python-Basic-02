@@ -37,11 +37,15 @@ Output:
 Nilai faktorial 5 adalah 120
 
 
-Modul math menyediakan berbagai modul yang bisa kita 
-coba untuk keperluan matematika, beberapa diantaranya
+Modul math menyediakan berbagai method atau fungsi yang bisa 
+kita gunakan untuk keperluan matematika, beberapa diantaranya
 adalah.
 
-Mendapatkan nilai pada bilangan berpangkat
+
+pow()
+
+pow() adalah fungsi yang bisa kita gunakan untuk mendapatkan 
+nilai pada bilangan berpangkat.
 
 Contoh:
 
@@ -55,7 +59,10 @@ Output:
 5 pangkat 2 sama dengan 25
 
 
-Mendapatkan nilai pada bilangan akar kuadrat
+sqrt()
+
+sqrt() adalah fungsi yang bisa kita gunakan untuk mendapatkan 
+nilai pada bilangan akar kuadrat.
 
 Contoh:
 
@@ -68,7 +75,11 @@ Output:
 Akar kuadrat dari 400 adalah 20
 
 
-Mendapatkan jumlah nilai pada sebuah iterable (list, tuple, dll)
+fsum()
+
+fsum() adalah fungsi yang bisa kita gunakan untuk
+mendapatkan jumlah nilai pada sebuah iterable (list, tuple, 
+dll).
 
 Contoh:
 
