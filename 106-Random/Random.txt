@@ -1,0 +1,43 @@
+Catatan:
+
+Randaom
+
+Randaom adalah modul yang bisa kita gunakan untuk 
+mengacak angka. Salah satu contoh penggunaan dari
+modul ini adalah, kita bisa mendapatkan sebuah 
+angka secara acak dari angka 1 sampai 10. Untuk
+melakukannya kita bisa menggunakan fungsi randint().
+
+Contoh:
+
+import random
+
+angka_acak = random.randint(1, 10)
+print('Sebuah angka acak dari 1 sampai 10 adalah {}'.format(angka_acak))
+
+
+Output:
+
+Sebuah angka acak dari 1 sampai 10 adalah 5
+
+
+Selain itu kita juga bisa mendapatkan sebuah item 
+secara acak dari sebuah iterable contohnya seperti
+list. Untuk melakukannya kita bisa menggunakan fungsi
+choice().
+
+Contoh:
+
+# Mendapatkan sebuah item secara acak dari list
+list_string = ['Jeruk', 'Apel', 'Mangga', 'Anggur']
+item_acak = random.choice(list_string)
+print('Item acak dari {} adalah {}'.format(list_string, item_acak))
+
+Output:
+
+Item acak dari ['Jeruk', 'Apel', 'Mangga', 'Anggur'] adalah Jeruk
+
+
+Referensi:
+
+1.  https://www.w3schools.com/python/module_random.asp
