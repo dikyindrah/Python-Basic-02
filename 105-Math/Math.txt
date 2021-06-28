@@ -1,0 +1,87 @@
+Catatan:
+
+Math
+
+Math adalah modul yang bisa kita gunakan untuk menangani 
+tugas-tugas yang berhubungan dengan matematika. Salah satu 
+contoh penggunaan dari modul ini adalah, kita bisa mencari
+nilai faktorial pada suatu bilangan dengan mudah.
+
+Contoh:
+
+# Faktorial dengan modul math
+nilai = 5
+nilai_faktorial = math.factorial(nilai)
+print('Nilai faktorial {} adalah {}'.format(nilai, nilai_faktorial))
+
+Output:
+
+Nilai faktorial 5 adalah 120
+
+
+Tanpa menggunakan modul math, kode diatas bisa kita tulis
+sebagai berikut.
+
+Contoh:
+
+# Faktorial dengan cara manual
+tmp2 = 1
+for i in range(1, nilai+1):
+    tmp1 = i
+    tmp2 = tmp2 * tmp1
+
+print('Nilai faktorial {} adalah {}'.format(nilai, tmp2))
+
+Output:
+
+Nilai faktorial 5 adalah 120
+
+
+Modul math menyediakan berbagai modul yang bisa kita 
+coba untuk keperluan matematika, beberapa diantaranya
+adalah.
+
+Mendapatkan nilai pada bilangan berpangkat
+
+Contoh:
+
+# Mendapatkan nilai pada bilangan berpangkat
+pangkat = 2
+nilai_pangkat = int(math.pow(nilai, pangkat))
+print('{} pangkat {} sama dengan {}'.format(nilai, pangkat, nilai_pangkat))
+
+Output:
+
+5 pangkat 2 sama dengan 25
+
+
+Mendapatkan nilai pada bilangan akar kuadrat
+
+Contoh:
+
+# Mendapatkan nilai pada bilangan akar kuadrat
+nilai_akar = int(math.sqrt(400))
+print('Akar kuadrat dari {} adalah {}'.format(400, nilai_akar))
+
+Output:
+
+Akar kuadrat dari 400 adalah 20
+
+
+Mendapatkan jumlah nilai pada sebuah iterable (list, tuple, dll)
+
+Contoh:
+
+# Mendapatkan jumlah nilai pada sebuah iterable (list, tuple, dll)
+list_integer = [10, 20, 30, 40, 50]
+jumlah = int(math.fsum(list_integer))
+print('Jumlah nilai {} adalah {}'.format(list_integer, jumlah)) 
+
+Output:
+
+Jumlah nilai [10, 20, 30, 40, 50] adalah 150
+
+
+Referensi:
+
+1.  https://www.w3schools.com/python/module_math.asp
