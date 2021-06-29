@@ -1,0 +1,142 @@
+Catatan:
+
+RegEx Functions
+
+Modul re pada python menawarkan sejumlah method atau fungsi
+yang bisa kita gunakan untuk mencari string. 
+
+
+findall()
+
+findall() mengembalikan string yang cocok dalam bentuk list.
+Jika string ditemukan maka akan mengembalikan objek match (
+string yang sesuai atau cocok dengan pola) dalam bentuk 
+list dan jika tidak ditemukan maka akan mengembalikan nilai 
+None.
+
+Contoh:
+
+import re
+
+# findall()
+teks = '27 November 1999'
+
+pola = '\d+'
+hasil = re.findall(pola, teks)
+print(hasil)
+
+
+Output:
+
+['27', '1999']
+
+
+search()
+
+Method search() mencari lokasi pertama di mana pola RegEx 
+menghasilkan kecocokan dengan string. Jika string ditemukan 
+maka akan mengembalikan objek match (string yang sesuai 
+atau cocok dengan pola) dan jika tidak ditemukan maka akan 
+mengembalikan nilai None.
+
+Contoh:
+
+# search()
+teks_1 = 'python adalah bahasa pemrograman yang mudah untuk digunakan'
+teks_2 = 'nomor whatsapp : 082112345678'
+
+pola_1 = 'pemrograman'
+pola_2 = '\d\d\d\d\d\d\d\d\d\d\d\d'
+
+hasil_1 = re.search(pola_1, teks_1)
+hasil_2 = re.search(pola_2, teks_2)
+
+print(hasil_1)
+print(hasil_2)
+
+
+Output:
+
+<re.Match object; span=(20, 26), match='python'>
+<re.Match object; span=(17, 29), match='082112345678'>
+
+
+Kita bisa menggunakan sejumlah method untuk mengolah objek 
+match yang di hasilkan dari method search(). Beberapa
+yang umum digunakan diantaranya.
+
+group()
+
+Method group() mengembalikan bagian dari string yang cocok
+dengan pola. 
+
+Contoh:
+
+# group
+print(hasil_2.group())
+
+
+Output:
+
+082112345678
+
+
+start(), end(), dan span()
+
+Method start() mengembalikan indeks awal dari objek match
+pada string dan method end() mengembalikan indeks akhir dari 
+objek match pada string.
+
+Contoh:
+
+# start(), end(), dan span()
+print('teks = {}'.format(teks_1))
+print('panjang teks = {}'.format(len(teks_1)))
+print('teks yang dicari = {}'.format(hasil_1.group()))
+print('teks {} ditemukan pada rentang indeks {} sampai {}'.format(hasil_1.group(), hasil_1.start(), hasil_1.end()))
+
+
+Output:
+
+teks = python adalah bahasa pemrograman yang mudah untuk digunakan
+panjang teks = 59
+teks yang dicari = pemrograman
+teks pemrograman ditemukan pada rentang indeks 21 sampai 32
+
+
+Method span() mengembalikan tuple yang berisi indeks awal dan 
+akhir dari objek match pada string.
+
+Contoh:
+
+print(hasil_1.span())
+
+
+Output:
+
+(21, 32)
+
+
+re dan string
+
+Atribut re mengembalikan pola yang digunakan pada objek match
+dari method search() dan atribut string mengembalikan string 
+yang diteruskan pada method search().
+
+Contoh:
+
+# re dan string
+print(hasil_2.re)
+print(hasil_2.string)
+
+Output:
+
+re.compile('\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d')
+nomor whatsapp : 082112345678
+
+
+Referensi:
+
+1.  https://www.pythonindo.com/regular-expression/
+2.  https://www.programiz.com/python-programming/regex
+3.  https://www.w3schools.com/python/python_regex.asp
