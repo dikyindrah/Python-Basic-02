@@ -1,0 +1,72 @@
+Catatan:
+
+Regular Expression (RegEx)
+
+Regular Expression (RegEx) adalah urutan karakter yang 
+mendefinisikan pola pencarian. Dengan RegEx kita bisa
+mencari teks tertentu menggunakan pola (pattern) yang 
+sudah kita tentukan. Misalnya kita ingin mencari nomor
+telepon pada kumpulan teks. 
+
+Jika menggunakan cara manual kode programnya bisa kita
+tulis sebagai berikut.
+
+Contoh:
+
+pesan = 'ini adalah nomor teleponku 082181177026, tolong disimpan ya!'
+
+nomor_telepon = ''
+
+for i in range(len(pesan)):
+    teks = pesan[i:i+12]
+    if teks.isdigit():
+        if len(teks) == 12:
+            nomor_telepon = teks
+
+print('Nomor telepon ditemukan : {}'.format(nomor_telepon))
+
+
+Output:
+
+Nomor telepon ditemukan : 082181177026
+
+
+Namun jika kita menggunakan RegEx, kode programnya akan
+terlihat menjadi lebih sederhana.
+
+Contoh:
+
+import re
+
+pesan = 'ini adalah nomor teleponku 082181177026, tolong disimpan ya!'
+
+pola = re.compile(r'\d\d\d\d\d\d\d\d\d\d\d\d')
+nomor_telepon = pola.search(pesan)
+print('Nomor telepon ditemukan : {}'.format(nomor_telepon))
+
+Output:
+
+Nomor telepon ditemukan : <re.Match object; span=(27, 39), match='082181177026'>
+
+
+Pada kode program di atas, kita mengimport modul re (RegEx),
+kemudian membuat objek regex menggunakan method compile() dan 
+menyimpannya kedalam sebuah variabel bernama 'pola'. 
+
+Setelah itu kita bisa menggunakan method search() pada objek 
+'pola' untuk mencari nomor telepon. Jika ditemukan maka akan
+mengembalikan objek yang cocok (matching) berupa nomor 
+telepon dan jika tidak ditemukan maka akan mengembalikan nilai 
+None.
+
+Pola yang kita gunakan disini adalah 12 karakter escape \d yang
+mendefinisikan 12 digit angka, dan untuk mempermudah penulisan 
+karakter escape kita bisa menggunakan simbol 'r' sebelum 
+menulisnya.
+
+
+Referensi:
+
+1.  https://www.pythonindo.com/regular-expression/
+2.  https://www.programiz.com/python-programming/regex
+3.  https://www.w3schools.com/python/python_regex.asp
