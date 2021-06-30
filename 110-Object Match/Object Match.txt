@@ -1,0 +1,26 @@
+Catatan:
+
+Object Match
+
+Object Match adalah string yang cocok dengan pola yang
+sudah kita tentukan.  Jadi saat kita menggunakan regex 
+untuk mencari suatu string menggunakan pola dan 
+menemukannya maka itu disebut object match.
+
+Contoh:
+
+import re
+
+teks  = 'hello python'
+hasil = re.search('python', teks)
+print(hasil)
+
+
+Output:
+
+<re.Match object; span=(6, 12), match='python'>
+
+
+Referensi:
+
+1.  https://www.w3schools.com/python/python_regex.asp
