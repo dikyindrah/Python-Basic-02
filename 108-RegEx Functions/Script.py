@@ -1,36 +1,60 @@
 import re
 
 # findall()
-teks = '27 November 1999'
+f_teks = '27 November 1999'
 
-pola = '\d+'
-hasil = re.findall(pola, teks)
-print(hasil)
+f_pola = '\d+'
+f_hasil = re.findall(f_pola, f_teks)
+print(f_hasil)
 
 
 # search()
-teks_1 = 'python adalah bahasa pemrograman yang mudah untuk digunakan'
-teks_2 = 'nomor whatsapp : 082112345678'
+sh_teks_1 = 'python adalah bahasa pemrograman yang mudah untuk digunakan'
+sh_teks_2 = 'nomor whatsapp : 082112345678'
 
-pola_1 = 'pemrograman'
-pola_2 = '\d\d\d\d\d\d\d\d\d\d\d\d'
+sh_pola_1 = 'pemrograman'
+sh_pola_2 = '\d\d\d\d\d\d\d\d\d\d\d\d'
 
-hasil_1 = re.search(pola_1, teks_1)
-hasil_2 = re.search(pola_2, teks_2)
+sh_hasil_1 = re.search(sh_pola_1, sh_teks_1)
+sh_hasil_2 = re.search(sh_pola_2, sh_teks_2)
 
-print(hasil_1)
-print(hasil_2)
+print(sh_hasil_1)
+print(sh_hasil_2)
 
 # group()
-print(hasil_2.group())
+print(sh_hasil_2.group())
 
 # start(), end(), dan span()
-print('teks = {}'.format(teks_1))
-print('panjang teks = {}'.format(len(teks_1)))
-print('teks yang dicari = {}'.format(hasil_1.group()))
-print('teks {} ditemukan pada rentang indeks {} sampai {}'.format(hasil_1.group(), hasil_1.start(), hasil_1.end()))
-print(hasil_1.span())
+print('teks = {}'.format(sh_teks_1))
+print('panjang teks = {}'.format(len(sh_teks_1)))
+print('teks yang dicari = {}'.format(sh_hasil_1.group()))
+print('teks {} ditemukan pada rentang indeks {} sampai {}'.format(sh_hasil_1.group(), sh_hasil_1.start(), sh_hasil_1.end()))
+print(sh_hasil_1.span())
 
 # re dan string
-print(hasil_2.re)
-print(hasil_2.string)
+print(sh_hasil_2.re)
+print(sh_hasil_2.string)
+
+
+# split()
+st_teks_1 = 'hari ini hujan'
+st_teks_2 = '123-456-789-101'
+
+st_pola_1 = '\s'
+st_pola_2 = r'\D'
+
+st_hasil_1 = re.split(st_pola_1, st_teks_1)
+st_hasil_2 = re.split(st_pola_2, st_teks_2)
+
+
+print(st_hasil_1)
+print(st_hasil_2)
+
+# Maxsplit = 1
+st_hasil_3 = re.split(st_pola_2, st_teks_2, 1)
+
+# Maxsplit = 2 
+st_hasil_4 = re.split(st_pola_2, st_teks_2, 2)
+
+print(st_hasil_3)
+print(st_hasil_4)
