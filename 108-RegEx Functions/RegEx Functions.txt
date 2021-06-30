@@ -2,27 +2,27 @@ Catatan:
 
 RegEx Functions
 
-Modul re pada python menawarkan sejumlah method atau fungsi
-yang bisa kita gunakan untuk mencari string. 
+Modul re pada python menawarkan sejumlah method atau 
+fungsi yang bisa kita gunakan untuk mencari string. 
 
 
 findall()
 
-findall() mengembalikan string yang cocok dalam bentuk list.
-Jika string yang sesuai atau cocok dengan pola ditemukan maka 
-akan mengembalikan objek match dalam bentuk list dan jika tidak 
-ditemukan maka akan mengembalikan nilai None.
+findall() mengembalikan string yang cocok dalam bentuk 
+list. Jika string yang cocok dengan pola ditemukan maka 
+akan mengembalikan objek match dalam bentuk list dan 
+jika tidak ditemukan maka akan mengembalikan nilai None. 
+Method findall() memiliki dua argumen yang harus kita 
+berikan yaitu pola (pattern) dan string.
 
 Contoh:
 
 import re
 
 # findall()
-f_teks = '27 November 1999'
-
-f_pola = '\d+'
-f_hasil = re.findall(f_pola, f_teks)
-print(f_hasil)
+teks = '27 November 1999'
+hasil = re.findall(r'\d+', teks)
+print(hasil)
 
 
 Output:
@@ -32,89 +32,81 @@ Output:
 
 search()
 
-Method search() mencari lokasi pertama di mana pola RegEx 
-menghasilkan kecocokan dengan string. Jika string yang sesuai 
-atau cocok dengan pola ditemukan maka akan mengembalikan 
-objek match dan jika tidak ditemukan maka akan mengembalikan 
-nilai None.
+search() mencari lokasi saat pola regex cocok dengan 
+string. Jika ditemukan kecocokan antara pola dengan 
+string, maka string yang cocok dan lokasi yang merujuk 
+pada indeks awal dan akhir string yang cocok dari 
+string asli akan dikembalikan sebagai objek match dan 
+jika tidak ditemukan maka akan mengembalikan nilai None.
+Method search() memiliki dua argumen yang harus kita 
+berikan yaitu pola (pattern) dan string.
+
 
 Contoh:
 
 # search()
-sh_teks_1 = 'python adalah bahasa pemrograman yang mudah untuk digunakan'
-sh_teks_2 = 'nomor whatsapp : 082112345678'
-
-sh_pola_1 = 'pemrograman'
-sh_pola_2 = '\d\d\d\d\d\d\d\d\d\d\d\d'
-
-sh_hasil_1 = re.search(sh_pola_1, sh_teks_1)
-sh_hasil_2 = re.search(sh_pola_2, sh_teks_2)
-
-print(sh_hasil_1)
-print(sh_hasil_2)
+teks = 'javascript, php, pyhton, 12345, go, r'
+hasil = re.search(r'\d\d\d\d\d', teks)
+print(len(teks))
+print(hasil)
 
 
 Output:
 
-<re.Match object; span=(20, 26), match='python'>
-<re.Match object; span=(17, 29), match='082112345678'>
+37
+<re.Match object; span=(25, 30), match='12345'>
 
 
-Kita bisa menggunakan sejumlah method untuk mengolah objek 
-match yang di hasilkan dari method search(). Beberapa
-yang umum digunakan diantaranya.
+Kita bisa menggunakan sejumlah method untuk mengolah 
+objek match yang di hasilkan dari method search(). 
+Beberapa yang umum digunakan diantaranya.
 
 group()
 
-Method group() mengembalikan bagian dari string yang cocok
+group() mengembalikan bagian dari string yang cocok
 dengan pola. 
 
 Contoh:
 
-# group
-print(sh_hasil_2.group())
+# group()
+print(hasil.group())
 
 
 Output:
 
-082112345678
+12345
 
 
 start(), end(), dan span()
 
-Method start() mengembalikan indeks awal dari objek match
-pada string dan method end() mengembalikan indeks akhir dari 
+start() mengembalikan indeks awal dari objek match
+pada string dan end() mengembalikan indeks akhir dari 
 objek match pada string.
 
 Contoh:
 
 # start(), end(), dan span()
-print('teks = {}'.format(sh_teks_1))
-print('panjang teks = {}'.format(len(sh_teks_1)))
-print('teks yang dicari = {}'.format(sh_hasil_1.group()))
-print('teks {} ditemukan pada rentang indeks {} sampai {}'.format(sh_hasil_1.group(), sh_hasil_1.start(), sh_hasil_1.end()))
-print(sh_hasil_1.span())
+print(hasil.start())
+print(hasil.end())
 
 
 Output:
 
-teks = python adalah bahasa pemrograman yang mudah untuk digunakan
-panjang teks = 59
-teks yang dicari = pemrograman
-teks pemrograman ditemukan pada rentang indeks 21 sampai 32
+25
+30
 
 
-Method span() mengembalikan tuple yang berisi indeks awal dan 
+span() mengembalikan tuple yang berisi indeks awal dan 
 akhir dari objek match pada string.
 
 Contoh:
 
-print(sh_hasil_1.span())
+print(hasil.span())
 
 
 Output:
 
-(21, 32)
+(25, 30)
 
 
 re dan string
@@ -126,71 +118,123 @@ yang diteruskan pada method search().
 Contoh:
 
 # re dan string
-print(sh_hasil_2.re)
-print(sh_hasil_2.string)
+print(hasil.re)
+print(hasil.string)
 
 Output:
 
-re.compile('\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d')
-nomor whatsapp : 082112345678
+re.compile('\\d\\d\\d\\d\\d')
+javascript, php, pyhton, 12345, go, r
 
 
 split()
 
-Method split() membagi objek match dan mengembalikannya 
-dalam bentuk list. Jika string yang sesuai atau cocok 
-dengan pola ditemukan maka akan mengembalikan objek match 
-dalam bentuk list dan jika tidak ditemukan maka akan 
-mengembalikan list berisi string asli.
+split() membagi objek match dan mengembalikannya dalam 
+bentuk list. Jika string yang cocok dengan pola ditemukan 
+maka akan mengembalikan objek match dalam bentuk list dan 
+jika tidak ditemukan maka akan mengembalikan list berisi 
+string asli. Method split() memiliki dua argumen yang harus 
+kita berikan yaitu pola (pattern) dan string.
 
 Contoh:
 
 # split()
-st_teks_1 = 'hari ini hujan'
-st_teks_2 = '123-456-789-101'
+teks = 'hari ini hujan lebat'
 
-st_pola_1 = '\s'
-st_pola_2 = r'\D'
-
-st_hasil_1 = re.split(st_pola_1, st_teks_1)
-st_hasil_2 = re.split(st_pola_2, st_teks_2)
-
-print(st_hasil_1)
-print(st_hasil_2)
+hasil = re.split(r'\s', teks)
+print(hasil)
 
 
 Output:
 
-['hari', 'ini', 'hujan']
-['123', '456', '789', '101']
+['hari', 'ini', 'hujan', 'lebat']
 
 
 Kita juga bisa menambahkan maxsplit untuk menentukan
 jumlah maksimum objek match yang bisa di bagi atau 
-dipecah menjadi beberapa bagian.
+dipecah menjadi beberapa bagian. 
 
 Contoh:
 
+
 # Maxsplit = 1
-st_hasil_3 = re.split(st_pola_2, st_teks_2, 1)
+mx_hasil = re.split(r'\s', teks, 1)
+print(mx_hasil)
 
-# Maxsplit = 2 
-st_hasil_4 = re.split(st_pola_2, st_teks_2, 2)
-
-print(st_hasil_3)
-print(st_hasil_4)
+# Maxsplit = 2
+mx_hasil = re.split(r'\s', teks, 2)
+print(mx_hasil)
 
 
 Output:
 
-['123', '456-789-101']
-['123', '456', '789-101']
+['hari', 'ini hujan lebat']
+['hari', 'ini', 'hujan lebat']
 
 
 Karena indeks pada list dimulai dari 0, maka jika kita
 mendefinisikan maxsplit sama dengan 1 maka objek match
 akan dipecah menajdi dua bagian, karena indeksnya 0, 1.
+Nilai default dari maxsplit adalah 0, yang artinya objek
+match dipecah menjadi beberapa bagian berdasarkan seluruh 
+kemungkinan.
 
+
+sub()
+
+sub() mengganti objek match dengan string baru kemudian 
+mengembalikannya sebagai string. Jika string yang cocok 
+dengan pola ditemukan maka akan mengganti objek match 
+dengan string baru dan mengembalikannya dalam bentuk 
+string dan jika tidak ditemukan maka akan mengembalikan 
+string asli. Method sub() memiliki tiga argumen yang 
+harus kita berikan yaitu pola (pattern), string baru 
+(replace), dan string.
+
+Contoh:
+
+# sub()
+teks  = 'saya sedang belajar java'
+hasil = re.sub('java', 'python', teks)
+print(hasil)
+
+Output:
+
+saya sedang belajar python
+
+
+Pada method sub() kita juga bisa menentukan jumlah 
+objek match yang ingin kita ubah dengan menambahkan
+argumen pada parameter count.
+
+Contoh:
+
+teks  = 'java, java, java, java, java, java, java'
+hasil = re.sub('java', 'python', teks, 3)
+print(hasil)
+
+Output:
+
+python, python, python, java, java, java, java
+
+
+subn()
+
+subn() mirip dengan method sub(), hanya saja subn()
+mengembalikan tuple yang berisi string asli dan
+jumlah objek match.
+
+Contoh:
+
+# subn()
+teks  = 'java, go, java, go, java, go, java'
+hasil = re.subn('java', 'python', teks)
+print(hasil)
+
+
+Output:
+
+('python, go, python, go, python, go, python', 4)
 
 
 Referensi:
