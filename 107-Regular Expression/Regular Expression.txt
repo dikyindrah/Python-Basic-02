@@ -13,22 +13,22 @@ tulis sebagai berikut.
 
 Contoh:
 
-pesan = 'ini adalah nomor teleponku 082181177026, tolong disimpan ya!'
+teks = 'wa : 082123456789, ini adalah nomor telepon saya.'
 
+# Mencari nomor telepon dengan cara manual
 nomor_telepon = ''
+for i in range(len(teks)):
+    tmp = teks[i:i+12]
+    if tmp.isdigit():
+        if len(tmp) == 12:
+            nomor_telepon = tmp
 
-for i in range(len(pesan)):
-    teks = pesan[i:i+12]
-    if teks.isdigit():
-        if len(teks) == 12:
-            nomor_telepon = teks
-
-print('Nomor telepon ditemukan : {}'.format(nomor_telepon))
+print(nomor_telepon)
 
 
 Output:
 
-Nomor telepon ditemukan : 082181177026
+082123456789
 
 
 Namun jika kita menggunakan RegEx, kode programnya akan
@@ -38,31 +38,28 @@ Contoh:
 
 import re
 
-pesan = 'ini adalah nomor teleponku 082181177026, tolong disimpan ya!'
+teks = 'wa : 082123456789, ini adalah nomor telepon saya.'
 
-pola = re.compile(r'\d\d\d\d\d\d\d\d\d\d\d\d')
-nomor_telepon = pola.search(pesan)
-print('Nomor telepon ditemukan : {}'.format(nomor_telepon))
+# Mencari nomor telepon dengan regex
+nomor_telepon = re.search(r'\d\d\d\d\d\d\d\d\d\d\d\d', teks)
+print(nomor_telepon.group())
 
 Output:
 
-Nomor telepon ditemukan : <re.Match object; span=(27, 39), match='082181177026'>
+082123456789
 
 
-Pada kode program di atas, kita mengimport modul re (RegEx),
-kemudian membuat objek regex menggunakan method compile() dan 
-menyimpannya kedalam sebuah variabel bernama 'pola'. 
+Pada kode program di atas, kita mengimport modul re untuk
+menggunakan regex. Setelah itu kita bisa menggunakan
+method search() untuk mencari string yang sesuai dengan
+pola yang kita buat (object match). Setelah object match
+ditemukan, kita bisa menggunakan method group() untuk 
+mengambil string yang kita inginkan.
 
-Setelah itu kita bisa menggunakan method search() pada objek 
-'pola' untuk mencari nomor telepon. Jika ditemukan maka akan
-mengembalikan objek yang cocok (matching) berupa nomor 
-telepon dan jika tidak ditemukan maka akan mengembalikan nilai 
-None.
-
-Pola yang kita gunakan disini adalah 12 karakter escape \d yang
-mendefinisikan 12 digit angka, dan untuk mempermudah penulisan 
-karakter escape kita bisa menggunakan simbol 'r' sebelum 
-menulisnya.
+Pola yang kita gunakan pada kode program diatas adalah 12 
+karakter escape \d yang mendefinisikan 12 digit angka, dan 
+untuk mempermudah penulisan karakter escape kita bisa 
+menggunakan raw string dengan simbol 'r' sebelum menulisnya.
 
 
 Referensi:
