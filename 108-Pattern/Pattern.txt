@@ -1,0 +1,45 @@
+Catatan:
+
+Pattern
+
+Pattern atau pola adalah bentuk atau model yang bisa
+kita gunakan untuk menghasilkan sesuatu dari suatu hal.
+Pada regex kita bisa mendefinisikan pola dengan beberapa
+cara, diantaranya sebagai berikut.
+
+Contoh:
+
+import re
+
+teks = '1.python 2.golang 3.php'
+
+# Membuat pola dengan langsung menulisnya 
+# sebagai argumen method
+hasil = re.findall('golang', teks)
+print(hasil)
+
+# Membuat pola dengan menulis dan 
+# menyimpannya kedalam variabel
+pola = '\d'
+hasil = re.findall(pola, teks)
+print(hasil)
+
+# Membuat objek pola dengan method
+# compile()
+pola = re.compile('\d')
+hasil = re.findall(pola, teks)
+print(hasil)
+
+
+Output:
+
+['golang']
+['1', '2', '3']
+['1', '2', '3']
+
+
+Referensi:
+
+1.  https://www.pythonindo.com/regular-expression/
+2.  https://www.programiz.com/python-programming/regex
+3.  https://www.w3schools.com/python/python_regex.asp
