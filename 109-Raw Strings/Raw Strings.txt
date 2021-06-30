@@ -1,0 +1,61 @@
+Catatan:
+
+Raw String
+
+Raw String adalah cara yang bisa kita gunakan untuk
+memperlakukan garis miring terbalik '\' sebagai literal
+atau karakter normal. Misalnya kita ingin mencetak '\n' 
+sebagai literal, namun kita tidak bisa mencetaknya 
+begitu saja, karena python akan mengaggapnya sebagai 
+Escape Character.
+
+Contoh:
+
+# Mencetak \n tanpa raw string
+print('hello \nworld')
+
+Output:
+
+hello
+world
+
+
+Untuk mengatasi hal ini kita bisa menggunakan raw string
+agar Escape Character bisa di anggap sebagai literal atau
+karakter normal. Raw string bisa didefinisikan dengan 
+simbol 'r' atau 'R', simbol ini diberikan sebelum kita 
+memberikan string.
+
+Contoh:
+
+# Mencetak \n dengan raw string
+print(r'hello \nworld')
+print(R'hello \nworld')
+
+Output:
+
+hello \nworld
+hello \nworld
+
+
+Kita bisa memanfaatkan raw string pada regex saat kita 
+ingin mendapatkan Escape Character pada suatu teks.
+
+Contoh:
+
+import re
+
+teks = 'ini \n adalah \t 10'
+hasil = re.findall(r'[\n\t]', teks)
+print(hasil)
+
+
+Output:
+
+['\n', '\t']
+
+
+Referensi:
+
+1.  https://www.quora.com/What-is-a-raw-string-in-Python
+2.  https://www.askpython.com/python/string/python-raw-strings
