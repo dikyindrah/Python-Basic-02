@@ -1,0 +1,236 @@
+Catatan:
+
+Metacharacters
+
+Metacharacters adalah karakter yang memiliki arti khusus
+pada regex. Ini bisa kita gunakan untuk menentukan pola
+dengan lebih mudah dan sederhana. Regex menyediakan 
+sejumlah metacharacters yang bisa kita gunakan.
+
+
+[] (Kurung Siku)
+
+Tanda kurung siku bisa kita gunakan untuk menentukan 
+satu set karakter yang ingin kita cocokkan.
+
+Contoh:
+
+import re
+
+teks = 'hari ini adalah hari ulang tahunku ke 21'
+
+# [] Kurung siku
+hasil = re.findall('[a-d]', teks)
+print(hasil)
+
+hasil = re.findall('[1-2]', teks)
+print(hasil)
+
+
+Output:
+
+['a', 'a', 'd', 'a', 'a', 'a', 'a', 'a']
+['2', '1']
+
+
+. (Tanda titik)
+
+Tanda titik bisa kita gunakan untuk mendapatkan karakter
+stelah pola.
+
+Contoh:
+
+import re
+
+teks = 'hari ini adalah hari ulang tahunku ke 21'
+
+# . Tanda titik
+hasil = re.findall('har..', teks)
+print(hasil)
+
+
+Output:
+
+['hari ', 'hari ']
+
+
+^ (Caret)
+
+Tanda caret bisa kita gunakan untuk mengetahui apakah
+string dimulai dengan karakter tertentu. Jika iya maka
+akan mengembalikan string yang cocok dengan pola dan
+jika tidak maka akan mengembalikan nilai None.
+
+Contoh:
+
+import re
+
+teks = 'hari ini adalah hari ulang tahunku ke 21'
+
+# ^ Tanda caret
+hasil = re.search('^hari', teks)
+print(hasil)
+
+hasil = re.search('^ini', teks)
+print(hasil)
+
+Output:
+
+<re.Match object; span=(0, 4), match='hari'>
+None
+
+
+$ (Dolar)
+
+Tanda dolar bisa kita gunakan untuk mengetahui apakah
+string diakhiri dengan karakter tertentu. Jika iya maka
+akan mengembalikan string yang cocok dengan pola dan
+jika tidak maka akan mengembalikan nilai None.
+
+Contoh:
+
+import re
+
+teks = 'hari ini adalah hari ulang tahunku ke 21'
+
+# $ Tanda dolar
+hasil = re.search('21$', teks)
+print(hasil)
+
+hasil = re.search('tahun$', teks)
+print(hasil)
+
+
+Output:
+
+<re.Match object; span=(38, 40), match='21'>
+None
+
+
+* (Tanda Bintang)
+
+Tanda bintang bisa kita gunakan untuk mendapatkan satu
+atau lebih karakter yang mengikuti string yang cocok 
+dengan pola.
+
+Contoh:
+
+import re
+
+teks = 'hari ini adalah hari ulang tahunku ke 21'
+
+# * Tanda bintang 
+hasil = re.findall('hari*', teks)
+print(hasil)
+
+teks = 'maaan'
+hasil = re.findall('ma*n', teks)
+print(hasil)
+
+
+Output:
+
+['hari', 'hari']
+['maaan']
+
++ (Tanda Tambah)
+
+Tanda tambah bisa kita gunakan untuk mendapatkan string
+yang tersisa stelah string yang cocok dengan pola ditemukan.
+
+Contoh:
+
+import re
+
+teks = 'hari ini adalah hari ulang tahunku ke 21'
+
+# + Tanda tambah
+hasil = re.findall('hari ulang..+', teks)
+print(hasil)
+
+hasil = re.search('\d+', teks)
+print(hasil.group())
+
+
+Output:
+
+['hari ulang tahunku ke 21']
+21
+
+
+{} (Tanda Kurung Kurawal atau Braces)
+
+Tanda kurung kurawal bisa kita gunakan untuk mengulang pola.
+
+Contoh:
+
+# {} Tanda kurung kurawal
+teks = '123456789'
+hasil = re.search('\d{9}', teks)
+print(hasil.group())
+
+
+Output: 
+
+123456789
+
+
+| (Tanda Vertical Bar)
+
+Tanda vertical bar bisa kita gunakan untuk pilihan alternatif
+pada pola. Tanda ini samahalnya dengan operator OR.
+
+Contoh:
+
+teks = 'hari ini adalah hari ulang tahunku ke 21'
+
+# | Tanda vertical bar
+hasil = re.findall('a|b', teks)
+print(hasil)
+
+Output:
+
+['a', 'a', 'a', 'a', 'a', 'a', 'a']
+
+
+() (Tanda Kurung)
+
+Tanda kurung digunakan untuk mengelompokan sub pola.
+
+Contoh:
+
+# () Tanda kurung
+teks = 'pukul 07:30 wib saya berangkat ke sekolah'
+pola = re.compile(r'(\d+:\d+ \w+) saya (\w..+)')
+hasil = re.search(pola, teks)
+print(hasil)
+
+
+Output:
+
+<re.Match object; span=(6, 41), match='07:30 wib saya berangkat ke sekolah'>
+
+
+\ (Tanda Garis Miring Terbalik)
+
+Tanda garis miring terbalik bisa kita gunakan sebagai escape 
+character.
+
+Contoh:
+
+# \ Tanda garis miring terbalik
+teks = 'umur saya adalah 21 tahun'
+hasil = re.search('\d+', teks)
+print(hasil.group())
+
+
+Output:
+
+21
+
+
+Referensi:
+
+1.  https://www.pythonindo.com/regular-expression/
+2.  https://www.programiz.com/python-programming/regex
+3.  https://www.w3schools.com/python/python_regex.asp
