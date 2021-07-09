@@ -49,10 +49,14 @@ hasil = re.findall('a|b', teks)
 print(hasil)
 
 # () Tanda kurung
-# teks = 'pukul 07:30 wib saya berangkat ke sekolah'
-# pola = re.compile(r'(\d+:\d+ \w+) saya (\w..+)')
-# hasil = re.search(pola, teks)
-# print(hasil)
+teks = 'pukul 07:30 wib saya berangkat ke sekolah'
+pola = re.compile(r'(\d+:\d+ \w+) saya (\w..+)')
+hasil = re.search(pola, teks)
+print(hasil)
+
+hasil = re.search('pukul (.*) wib saya berangkat (.*)', teks)
+print(hasil[1])
+print(hasil[2])
 
 # \ Tanda garis miring terbalik
 teks = 'umur saya adalah 21 tahun'

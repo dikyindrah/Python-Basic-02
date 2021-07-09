@@ -205,10 +205,16 @@ pola = re.compile(r'(\d+:\d+ \w+) saya (\w..+)')
 hasil = re.search(pola, teks)
 print(hasil)
 
+hasil = re.search('pukul (.*) wib saya berangkat (.*)', teks)
+print(hasil[1])
+print(hasil[2])
+
 
 Output:
 
 <re.Match object; span=(6, 41), match='07:30 wib saya berangkat ke sekolah'>
+07:30
+ke sekolah
 
 
 \ (Tanda Garis Miring Terbalik)
