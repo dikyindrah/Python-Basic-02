@@ -186,7 +186,7 @@ teks = 'hari ini adalah hari ulang tahunku ke 21'
 
 # | Tanda vertical bar
 hasil = re.findall('a|b', teks)
-print(hasil)
+print(hasil) 
 
 Output:
 
