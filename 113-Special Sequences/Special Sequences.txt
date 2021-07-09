@@ -1,0 +1,236 @@
+Catatan:
+
+Special Sequences
+
+Special Sequences atau urutan khusus adalah karakter 
+dasar yang memiliki arti tertentu. Karakter ini bisa
+memudahkan kita dalam pembuatan pola, misalnya jika
+kita sebelumnya menggunakan '[0-9]' untuk mendapatkan
+angka apapun dari '0' sampai '9' maka dengan urutan 
+khusus kita cukup menggunakan '\d' untuk mendapatkan 
+angka apapun. Sejumlah karakter dasar pada urutan
+khusus yang bisa kita gunakan diantaranya.
+
+
+\d
+
+\d mengembalikan kecocokan di mana string berisi angka '0'
+sampai '9'. Jadi \d hanya akan mengembalikan angka.
+
+Contoh:
+
+import re
+
+teks = '1.jeruk 2.apel 3.mangga 4.anggur 5.semangka'
+
+# \d
+hasil = re.findall('\d', teks)
+print(hasil)
+
+
+Output:
+
+['1', '2', '3', '4', '5']
+
+
+\D 
+
+\D mengembalikan kecocokan di mana string TIDAK mengandung 
+angka. Jadi \D akan mengembalikan apapun selain angka.
+
+Contoh:
+
+import re
+
+teks = '1.jeruk 2.apel 3.mangga 4.anggur 5.semangka'
+
+# \D
+hasil = re.findall('\D', teks)
+print(hasil)
+hasil = re.findall('\D+', teks)
+print(hasil)
+
+
+Output:
+
+['.', 'j', 'e', 'r', 'u', 'k', ' ', '.', 'a', 'p', 'e', 'l', ' ', '.', 'm', 'a', 'n', 'g', 'g', 'a', ' ', '.', 'a', 'n', 'g', 'g', 'u', 'r', ' ', '.', 's', 'e', 'm', 'a', 'n', 'g', 'k', 
+'a']
+['.jeruk ', '.apel ', '.mangga ', '.anggur ', '.semangka']
+
+
+\s
+
+\s mengembalikan kecocokan di mana string berisi karakter 
+spasi. Jadi \s hanya akan mengembalikan karakter spasi.
+
+Contoh:
+
+import re
+
+teks = '1.jeruk 2.apel 3.mangga 4.anggur 5.semangka'
+
+# \s
+hasil = re.findall('\s', teks)
+print(hasil)
+
+
+Output:
+
+[' ', ' ', ' ', ' ']
+
+
+\S
+
+\S mengembalikan kecocokan di mana string TIDAK mengandung 
+karakter spasi. Jadi \S mengembalikan seluruh karakter selain 
+spasi.
+
+Contoh:
+
+import re
+
+teks = '1.jeruk 2.apel 3.mangga 4.anggur 5.semangka'
+
+# \S
+hasil = re.findall('\S', teks)
+print(hasil)
+hasil = re.findall('\S+', teks)
+print(hasil)
+
+
+Output:
+
+['1', '.', 'j', 'e', 'r', 'u', 'k', '2', '.', 'a', 'p', 'e', 'l', '3', '.', 'm', 'a', 'n', 'g', 'g', 'a', '4', '.', 'a', 'n', 'g', 'g', 'u', 'r', '5', '.', 's', 'e', 'm', 'a', 'n', 'g', 
+'k', 'a']
+['1.jeruk', '2.apel', '3.mangga', '4.anggur', '5.semangka']
+
+\w
+
+\w mengembalikan kecocokan di mana string berisi karakter kata 
+apa pun (karakter dari a hingga Z, angka dari 0-9, dan garis 
+bawah _ karakter). Kecuali karakter seperti tanda titik dan
+spasi.
+
+Contoh:
+
+import re
+
+teks = '1.jeruk 2.apel 3.mangga 4.anggur 5.semangka'
+
+# \w 
+hasil = re.findall('\w', teks)
+print(hasil)
+hasil = re.findall('\w+', teks)
+print(hasil)
+
+
+Output:
+
+['1', 'j', 'e', 'r', 'u', 'k', '2', 'a', 'p', 'e', 'l', '3', 'm', 'a', 'n', 'g', 'g', 'a', '4', 'a', 'n', 'g', 'g', 'u', 'r', '5', 's', 'e', 'm', 'a', 'n', 'g', 'k', 'a']
+['1', 'jeruk', '2', 'apel', '3', 'mangga', '4', 'anggur', '5', 'semangka']
+
+
+\W
+
+\W mengembalikan kecocokan di mana string TIDAK mengandung 
+karakter kata apa pun. Jadi \W tidak mengembalikan karakter
+apapun selain tanda titik dan spasi.
+
+Contoh:
+
+import re
+
+teks = '1.jeruk 2.apel 3.mangga 4.anggur 5.semangka'
+
+# \W 
+hasil = re.findall('\W', teks)
+print(hasil)
+
+
+Output:
+
+['.', ' ', '.', ' ', '.', ' ', '.', ' ', '.']
+
+
+
+\A dan \Z
+
+\A mengembalikan kecocokan jika karakter yang ditentukan 
+berada di awal string dan \Z Mengembalikan kecocokan jika 
+karakter yang ditentukan berada di akhir string.
+
+Contoh:
+
+import re
+
+teks = 'matahari bersinar terang'
+
+# \A dan \B
+hasil = re.findall('\Amatahari', teks)
+print(hasil)
+hasil = re.findall('terang\Z', teks)
+print(hasil)
+
+
+Output:
+
+['matahari']
+['terang']
+
+
+\b
+
+\b mengembalikan kecocokan di mana karakter yang ditentukan 
+berada di awal atau di akhir kata. Jadi \b memiliki fungsi
+yang sama seperti \A dan \Z namun dengan \b kita hanya perlu
+menulis satu karakter saja jika kita ingin mencari karakter
+awal atau akhir pada string, yang perlu diperhatikan adalah
+penempatan karakter dan mendefinisikan raw string. Jika di 
+awal maka kita menempatkan \d di awal pola dan jika di akhir 
+maka kita menempatkan \d di akhir pola.  Raw string ktia 
+gunakan untuk memperlakukan karakter dengan \ sebagai karakter
+normal.
+
+Contoh:
+
+import re
+
+teks = 'matahari bersinar terang'
+
+# \b
+hasil = re.findall(r'\bmatahari', teks)
+print(hasil)
+hasil = re.findall(r'terang\b', teks)
+print(hasil)
+
+Output:
+
+['matahari']
+['terang']
+
+
+\B
+
+\B mengembalikan kecocokan di mana karakter yang ditentukan 
+ada, tetapi BUKAN di awal (atau di akhir). Penggunaan \B 
+sama seperti \b.
+
+Contoh:
+
+import re
+
+teks = 'matahari bersinar terang'
+
+# \B
+hasil = re.findall(r'bersinar\b', teks)
+print(hasil)
+
+Output:
+
+['bersinar']
+
+
+
+Referensi:
+
+1.  https://www.w3schools.com/python/python_regex.asp
