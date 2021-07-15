@@ -10,6 +10,42 @@ kesalahan (error) pada kode program yang diuji.
 
 Contoh:
 
+try:
+    print(x)
+except:
+    print('error!, variabel x belum didefinisikan.')
+
+
+Output:
+
+error!, variabel x belum didefinisikan.
+
+
+Pada kode program diatas pernyataan pada blok try akan
+menghasilkan sebuah kesalahan (error) karena variabel 'x' 
+belum didefinisikan, kesalahan (error) tersebut akan 
+mengembalikan sebuah pengecualian yang akan di tangani
+pada blok except. Blok except berisi sebuah pernyataan
+yang kita buat untuk menampilkan pesan kesalahan.
+
+
+Untuk mengetahui masalah yang lebih detail pada 
+pengecualian yang terjadi, kita bisa menggunakan
+beberpa cara:
+
+
+Menggunakan Modul sys
+
+Modul sys pada python menyediakan berbagai fungsi dan 
+variabel yang bisa digunakan untuk memanipulasi berbagai 
+bagian di lingkungan runtime python. 
+
+Untuk mengetahui masalah yang lebih detail pada pengecualian 
+yang terjadi kita bisa menggunakan fungsi exc_info() dari 
+modul ini.
+
+Contoh:
+
 import sys
 
 list_item = ['a', 0, 2]
@@ -40,7 +76,104 @@ item : 2
 2 / 2 = 1
 
 
+Menggunakan Kelas Exception
+
+Karena setiap pengecualian pada python di wariskan dari kelas 
+dasar Exception, maka kita bisa mengetahui masalah yang lebih 
+detail pada pengecualian yang terjadi dengan cara berikut:
+
+Contoh:
+
+list_item = ['a', 0, 2]
+
+try:
+    for i in range(4):
+        print(list_item[i])
+except Exception as e:
+    print(f'Terjadi kesalahan {e.__class__} pada kode program.')
+
+Output:
+
+a
+0
+2
+Terjadi kesalahan <class 'IndexError'> pada kode program.
+
+
+Mendefinisikan Nama Pengecualian Pada Kata Kunci Except
+
+Kita bisa mendefinisikan nama pengecualian pada kata 
+kunci except untuk menangani kesalahan yang menimbulkan 
+pengecualian pada program kita.
+
+Contoh:
+
+try:
+    print(x)
+except NameError as ne:
+    print(ne)
+
+Output:
+
+name 'x' is not defined
+
+
+kita juga bisa menambahkan sejumlah penanganan except pada
+sebuah try, namun penanganan yang akan di eksekusi hanyalah 
+satu yaitu penanganan yang sesuai dengan pengecualian yang 
+terjadi.
+
+
+Contoh:
+
+try:
+    print(x)
+except ValueError as ve:
+    print(ve)
+except NameError as ne:
+    # Ini adalah penanganan yang sesuai dengan pengecualian
+    print(ne)
+except IndexError as ie:
+    print(ie)
+
+
+Output:
+
+name 'x' is not defined
+
+
+Beberpa cara diatas bisa kita gunakan untuk menangani
+kesalahan (error) yang terjadi pada program, namun jika 
+tidak terjadi kesalahan (error) apapun maka program
+kita berjalan dengan baik. 
+
+
+Else
+
+Keyword else bisa kita gunakan untuk menambahkan 
+pernyataan lain yang akan di eksekusi jika tidak 
+ada kesalahan (error) yang terjadi.
+
+Contoh:
+
+list_angka = [1, 2, 3, 4, 5]
+try:
+    for item in list_angka:
+        print(item, end=' ')
+except:
+    e = sys.exc_info()[0]
+    print(e)
+else:
+    print('\nTidak ada kesalahan yang terjadi.')
+
+
+Output:
+
+1 2 3 4 5
+Tidak ada kesalahan yang terjadi.
+
 
 Referensi:
 
-1.  
+1.  https://www.programiz.com/python-programming/exception-handling
+2.  https://www.w3schools.com/python/python_try_except.asp
