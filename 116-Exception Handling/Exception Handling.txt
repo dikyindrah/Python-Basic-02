@@ -1,0 +1,47 @@
+Catatan:
+
+Exception Handling
+
+Adanya kesalahan (error) yang terjadi pada program saat 
+dijalankan dapat menyebabkan program itu berhenti. 
+Kesalahan tersebut bisa terjadi karena beberapa faktor
+misalnya seperti kesalahan input atau jenis data yang 
+di proses tidak sesuai. Untuk mengatasi kondisi seperti 
+ini kita bisa menggunakan Exception Handling.
+
+Exception Handling atau Penanganan Pengecualian adalah
+cara yang digunakan untuk menangani kesalahan (error) 
+pada program yang sedang dijalankan. Jadi dengan ini
+kita bisa membuat program kita tetap berjalan meskipun
+terjadi kesalahan (error).
+
+Pada python exception handling bisa dilakukan dengan
+menggunakan kata kunci (keyword) try, except, finally
+dan rise. Dimana setiap kata kunci ini memiliki fungsi 
+yang berbeda-beda.
+
+
+try dan except
+
+try digunakan untuk menguji kode program dan except
+digunakan untuk menangani kesalahan (error) pada 
+kode program yang diuji.
+
+finally
+
+finally akan menjalankan kode program dalam kondisi 
+apapun baik saat terjadi kesalahan maupun saat tidak
+terjadi kesalahan.
+
+rise
+
+rise digunakan untuk menentukan jenis kesalahan apa yang 
+akan dimunculkan, termasuk teks yang akan dicetak kepada 
+pengguna.
+
+
+
+Referensi:
+
+1.  https://www.programiz.com/python-programming/exception-handling
+2.  https://www.w3schools.com/python/python_try_except.asp
