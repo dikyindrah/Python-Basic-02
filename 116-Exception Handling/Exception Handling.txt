@@ -3,7 +3,7 @@ Catatan:
 Exception Handling
 
 Adanya kesalahan (error) yang terjadi pada program saat 
-dijalankan dapat menyebabkan program itu berhenti. 
+dijalankan (runtime) dapat menyebabkan program itu berhenti. 
 Kesalahan tersebut bisa terjadi karena beberapa faktor
 misalnya seperti kesalahan input atau jenis data yang 
 di proses tidak sesuai. Untuk mengatasi kondisi seperti 
