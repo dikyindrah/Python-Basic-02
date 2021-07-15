@@ -1,0 +1,46 @@
+Catatan:
+
+Try dan Except
+
+Try dan Except adalah Exception Handling atau Penanganan 
+Pengecualian yang digunakan untuk menguji dan menangani
+kesalahan (error) pada program. Try digunakan untuk 
+menguji kode program dan Except digunakan untuk menangani 
+kesalahan (error) pada kode program yang diuji.
+
+Contoh:
+
+import sys
+
+list_item = ['a', 0, 2]
+
+for item in list_item:
+    try:
+        print('item :', item)
+        n = int(item)/int(item)
+        break
+    except:
+        print('Terjadi kesalahan :', sys.exc_info()[0], 'pada kode program')
+        print('Selanjutnya..\n')
+
+print(item,'/',item, '=', int(n))
+
+
+Output:
+
+item : a
+Terjadi kesalahan : <class 'ValueError'> pada kode program
+Selanjutnya..
+
+item : 0
+Terjadi kesalahan : <class 'ZeroDivisionError'> pada kode program
+Selanjutnya..
+
+item : 2
+2 / 2 = 1
+
+
+
+Referensi:
+
+1.  
