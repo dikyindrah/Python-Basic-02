@@ -1,0 +1,40 @@
+Catatan:
+
+Finally
+
+Finally adalah Exception Handling atau Penanganan 
+Pengecualian yang akan menjalankan kode program dalam 
+kondisi apapun baik saat terjadi kesalahan maupun saat 
+tidak terjadi kesalahan. 
+
+Finally umumnya digunakan untuk menutup atau membersihkan 
+sumber daya. Misalnya, kita mungkin bekerja dengan file, 
+Graphical User Interface (GUI), atau jaringan. Dalam 
+kondisi ini kita harus menutup sumber daya sebelum program
+berhenti.
+
+Contoh:
+
+import sys
+
+try:
+    print('file dibuka.')
+    f = open(r'..\file.txt', 'w+')
+    f.write('Hello World!')
+except:
+    print(sys.exc_info()[0])
+finally:
+    f.close()
+    print('file ditutup.')
+
+
+Output:
+
+file dibuka.
+file ditutup.
+
+
+Referensi:
+
+1.  https://www.programiz.com/python-programming/exception-handling
+2.  https://www.w3schools.com/python/python_try_except.asp
