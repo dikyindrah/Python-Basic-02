@@ -1,0 +1,57 @@
+Catatan:
+
+Raise
+
+Pada python, pengecualian secara otomatis muncul ketika 
+terjadi kesalahan (error) pada program saat dijalankan 
+(runtime). Namun kita juga bisa membuat pengecualian 
+secara manual menggunakan raise.
+
+Pada Exception Handling atau Penanganan Pengecualian 
+Raise bisa kita gunakan untuk menentukan jenis pengecualian
+apa yang akan dimunculkan dan teks yang akan di cetak
+kepada pengguna.
+
+Contoh:
+
+# input -1
+n = int(input('input nilai: '))
+
+if n <= 0:
+    # Menentukan pengecualian & teks yang akan di tampilkan
+    raise ValueError('nilai n harus bilangan positif')
+
+Output:
+
+input nilai: -1
+
+Traceback (most recent call last):
+  File "../Script.py", line 5, in <module>   
+    raise ValueError('nilai n harus bilangan positif')
+ValueError: nilai n harus bilangan positif
+
+
+Secara optional ini bisa kita teruskan ke exception handling
+untuk mengetahui kenapa pengecualian itu muncul.
+
+Contoh:
+
+try:
+    n = int(input('input nilai: '))
+    if n <= 0:
+        # Menentukan pengecualian & teks yang akan di tampilkan
+        raise ValueError('nilai n harus bilangan positif')
+except ValueError as ve:
+    # Menampilkan teks dari pengecualian yang terjadi
+    print(ve)
+
+Output:
+
+input nilai: -1
+nilai n harus bilangan positif
+
+
+Referensi:
+
+1.  https://www.w3schools.com/python/python_try_except.asp
+2.  https://www.programiz.com/python-programming/exception-handling
