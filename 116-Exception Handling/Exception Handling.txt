@@ -3,7 +3,10 @@ Catatan:
 Exception Handling
 
 Adanya kesalahan (error) yang terjadi pada program saat 
-dijalankan (runtime) dapat menyebabkan program itu berhenti. 
+dijalankan (runtime) dapat menyebabkan program itu berhenti
+dan menimbulkan pengecualian. Pengecualian adalah objek
+yang mewakili kesalahan (error).
+
 Kesalahan tersebut bisa terjadi karena beberapa faktor
 misalnya seperti kesalahan input atau jenis data yang 
 di proses tidak sesuai. Untuk mengatasi kondisi seperti 
@@ -17,7 +20,7 @@ terjadi kesalahan (error).
 
 Pada python exception handling bisa dilakukan dengan
 menggunakan kata kunci (keyword) try, except, finally
-dan rise. Dimana setiap kata kunci ini memiliki fungsi 
+else, dan rise. Dimana setiap kata kunci ini memiliki fungsi 
 yang berbeda-beda.
 
 
@@ -33,6 +36,12 @@ finally akan menjalankan kode program dalam kondisi
 apapun baik saat terjadi kesalahan maupun saat tidak
 terjadi kesalahan.
 
+else
+
+else digunakan untuk menambahkan pernyataan lain yang 
+akan di eksekusi jika tidak ada kesalahan (error) yang 
+terjadi.
+
 rise
 
 rise digunakan untuk menentukan jenis kesalahan apa yang 
@@ -40,8 +49,8 @@ akan dimunculkan, termasuk teks yang akan dicetak kepada
 pengguna.
 
 
-
 Referensi:
 
 1.  https://www.programiz.com/python-programming/exception-handling
 2.  https://www.w3schools.com/python/python_try_except.asp
+3.  https://www.tutorialspoint.com/python/python_exceptions.htm
