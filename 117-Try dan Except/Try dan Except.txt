@@ -147,32 +147,6 @@ kesalahan (error) yang terjadi pada program, namun jika
 tidak terjadi kesalahan (error) apapun maka program
 kita berjalan dengan baik. 
 
-
-Else
-
-Keyword else bisa kita gunakan untuk menambahkan 
-pernyataan lain yang akan di eksekusi jika tidak 
-ada kesalahan (error) yang terjadi.
-
-Contoh:
-
-list_angka = [1, 2, 3, 4, 5]
-try:
-    for item in list_angka:
-        print(item, end=' ')
-except:
-    e = sys.exc_info()[0]
-    print(e)
-else:
-    print('\nTidak ada kesalahan yang terjadi.')
-
-
-Output:
-
-1 2 3 4 5
-Tidak ada kesalahan yang terjadi.
-
-
 Referensi:
 
 1.  https://www.programiz.com/python-programming/exception-handling

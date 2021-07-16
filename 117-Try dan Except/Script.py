@@ -42,14 +42,3 @@ except NameError as ne:
     print(ne)
 except IndexError as ie:
     print(ie)
-
-
-list_angka = [1, 2, 3, 4, 5]
-try:
-    for item in list_angka:
-        print(item, end=' ')
-except:
-    e = sys.exc_info()[0]
-    print(e)
-else:
-    print('\nTidak ada kesalahan yang terjadi.')
