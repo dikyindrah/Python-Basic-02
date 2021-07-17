@@ -1,0 +1,71 @@
+Catatan:
+
+File Handling
+
+Python mendukung File Handling atau penanganan file yang 
+membuat kita bisa melakukan apapun pada file seperti
+membuat, membuka, membaca, menulis, dan menutup file. 
+
+File sendiri adalah objek pada komputer yang digunakan 
+untuk menyimpan data atau informasi secara permanen pada 
+memori yang bersifat non-volatile (contoh: harddisk).
+Pada python ada dua jenis file yang bisa di tangani 
+yaitu file teks (.text) dan file biner (.bin), namun
+kita hanya akan melakukan file handling atau penanganan
+file pada teks (.text) saja.
+
+Python menyediakan fungsi bawaan (built-in funciton)
+dengan nama open() yang bisa kita gunakan untuk penanganan 
+file. Fungsi open() sendiri memiliki beberapa parameter 
+utama.
+
+open(file, mode='r', buffering=-1, encoding=None, errors=None,
+newline=None, closefd=True, opener=None)
+
+[-] file - Menentukan lokasi dan nama file. Jika file 
+           yang akan ditangani didalam satu direktori yang 
+           sama maka kita hanya perlu mendefinisikan nama 
+           filenya saja, namun jika berada pada direktori 
+           yang berbeda maka kita harus mendefinisikan
+           lokasi beserta nama filenya. 
+[-] Mode - Menentukan mode yang akan kita gunakan untuk
+           penanganan file. Misalnya jika kita ingin menulis 
+           pada file maka kita harus menggunakan mode 'w'. 
+           Python menyediakan beberpa mode untuk penanganan
+           file (r, w, x, a, b, t, +, U), namun secara default
+           akan di atur ke mode 'rt' yang artinya kita akan 
+           melakukan penanganan file dengan membaca pada file 
+           teks (.text).
+[-] buffering - Digunakan untuk mengatur kebijakan buffering.
+                Buffering sendiri adalah proses yang terjadi 
+                ketika data sedang dipindahkan ke memori yang 
+                dinamakan buffer. Buffer adalah memori yang 
+                digunakan untuk menyimpan sementara data yang 
+                sedang dipindahkan dari suatu tempat ke tempat 
+                lain. Tujuanya adalah untuk menyimpan data tepat 
+                sebelum digunakan dan mengurangi perbedaan 
+                kecepatan waktu antara input dan output. Kita 
+                bisa mengatur parameter buffering ini dengan
+                beberpa argumen yang bisa kita gunakan yaitu
+                '0' untuk menonaktifkan buffering (hanya 
+                diperbolehkan dalam mode biner) '1' untuk memilih
+                buffering baris (hanya dapat digunakan dalam 
+                mode teks) 'integer > 1' untuk menunjukkan ukuran 
+                buffer chunk ukuran tetap.
+[-] encoding - Untuk mengatur format encoding.
+[-] errors -
+[-] newline -
+[-] closefd -
+[-] opener -
+
+
+
+
+
+Referensi:
+
+1.  https://www.programiz.com/python-programming/file-operation
+2.  https://www.geeksforgeeks.org/file-handling-python/
+3.  https://www.w3schools.com/python/python_file_handling.asp
+4.  https://techterms.com/definition/buffer
+5.  https://www.techopedia.com/definition/948/encoding
