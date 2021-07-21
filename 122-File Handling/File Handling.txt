@@ -46,20 +46,30 @@ newline=None, closefd=True, opener=None)
                 sebelum digunakan dan mengurangi perbedaan 
                 kecepatan waktu antara input dan output. Kita 
                 bisa mengatur parameter buffering ini dengan
-                beberpa argumen yang bisa kita gunakan yaitu
-                '0' untuk menonaktifkan buffering (hanya 
-                diperbolehkan dalam mode biner) '1' untuk memilih
-                buffering baris (hanya dapat digunakan dalam 
-                mode teks) 'integer > 1' untuk menunjukkan ukuran 
+                beberpa argumen yaitu '0' untuk menonaktifkan 
+                buffering (hanya diperbolehkan dalam mode biner) '1' 
+                untuk memilih buffering baris (hanya dapat digunakan 
+                dalam mode teks) 'integer > 1' untuk menunjukkan ukuran 
                 buffer chunk ukuran tetap.
-[-] encoding - Untuk mengatur format encoding.
-[-] errors -
-[-] newline -
-[-] closefd -
-[-] opener -
-
-
-
+[-] encoding - Untuk mengatur format encoding. Encoding atau 
+               pengkodean sendiri adalah proses pengubahan data 
+               ke dalam format yang diperlukan untuk sejumlah 
+               kebutuhan pemrosesan informasi. Salah satu contoh
+               dari ini adalah character encoding atau pengkodean 
+               karakter untuk mengubah karakter ke dalam bentuk 
+               biner agar bisa di pahami dan proses oleh komputer.
+               Contoh character encoding atau pengkodean karakter
+               yang bisa digunakan adalah ASCII dan UTF.
+[-] errors - Untuk menentukan string yang akan menangani kesalahan 
+             encoding/decoding.
+[-] newline - Untuk menetukan baris baru. Nilai yang tersedia untuk
+              parameter ini antaralain None, ' ', '\n', '\r', dan 
+              '\r\n' 
+[-] closefd - Untuk menutup deskriptor file saat file utama ditutup.
+              Nilai untuk parameter ini harus diatur True, jika sebaliknya
+              maka pengecualian akan dimunculkan.
+[-] opener - Untuk mengembalikan deskriptor file terbuka. Ini bisa kita atur
+            nilainya menjadi none.
 
 
 Referensi:
