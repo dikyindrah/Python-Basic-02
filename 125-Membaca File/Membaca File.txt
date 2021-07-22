@@ -2,10 +2,138 @@ Catatan:
 
 Membaca File
 
-Kita bisa membaca file dengan mode r dan method dari
-objek file.
+Untuk membaca file dengan python, kita harus membuka
+file dengan fungsi open() dalam mode 'r' (Membuka file 
+untuk dibaca). Fungsi open() akan mengembalikan objek
+file. Setelah objek file dibuat, selanjutnya kita bisa
+menggunakan sejumlah method untuk membaca file.
+
+Sebagai contoh kita akan membuat sebuah file teks (.text) 
+bernama 'myfile' yang berisi teks di dalamnya.  
+
+
+read()
+
+read() bisa kita gunakan untuk membaca seluruh isi
+file dan membaca beberapa karakter pada file.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'r')
+
+# Membaca seluruh isi pada file
+print(myfile.read())
+
+# Membaca beberapa karakter pada file
+print(myfile.read(5))
+
+
+Output:
+
+Dalam pekerjaan sehari-hari saya, 
+saya bekerja pada sistem terdistribusi 
+yang sangat besar, kompleks, yang 
+dibangun dari banyak modul dan paket 
+Python. Fokusnya sangat mirip dengan 
+apa yang Anda temukan, misalnya, di Java 
+dan, secara umum, dalam bahasa pemrograman 
+sistem.
+
+Dalam
+
+
+readline()
+
+readline() bisa kita gunakan untuk membaca isi file 
+baris demi baris.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'r')
+
+# Membaca isi file baris demi baris
+print(myfile.readline())
+print(myfile.readline())
+print(myfile.readline())
+
+
+Output:
+
+Dalam pekerjaan sehari-hari saya, 
+saya bekerja pada sistem terdistribusi 
+yang sangat besar, kompleks, yang 
+
+
+Perulangan
+
+Kita bisa menggunakan perulangan untuk membaca isi file.
+
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'r')
+
+# Membaca isi file dengan perulangan 
+for i in myfile:
+    print(i, end='')
+
+Output:
+
+Dalam pekerjaan sehari-hari saya, 
+saya bekerja pada sistem terdistribusi 
+yang sangat besar, kompleks, yang 
+dibangun dari banyak modul dan paket 
+Python. Fokusnya sangat mirip dengan 
+apa yang Anda temukan, misalnya, di Java
+dan, secara umum, dalam bahasa pemrograman
+sistem
+
+
+readable()
+
+readable() bisa kita gunakan untuk memeriksa apakah
+sebuah file dapat dibaca atau tidak. Method ini 
+akan mengembalikan nilai boolean True jika file bisa
+dibaca dan nilai False jika file tidak bisa dibaca.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'r')
+
+# Memeriksa file apakah bisa dibaca atau tidak
+print(myfile.readable())
+
+Output:
+
+True
+
+
+readline()
+
+readline() bisa kita gunakan untuk menyimpan isi file
+kedalam list. Isi yang disimpan adalah isi file dalam 
+baris. 
+
+Contoh:
+
+# Menyimpan isi file kedalam list
+# Menyimpan seluruh baris isi file kedalam list
+list_seluruh_isi_file = myfile.readlines()
+print(list_seluruh_isi_file)
+
+Output:
+
+['Dalam pekerjaan sehari-hari saya, \n', 
+'saya bekerja pada sistem terdistribusi \n', 
+'yang sangat besar, kompleks, yang \n', 
+'dibangun dari banyak modul dan paket \n', 
+'Python. Fokusnya sangat mirip dengan \n', 
+'apa yang Anda temukan, misalnya, di Java \n', 
+'dan, secara umum, dalam bahasa pemrograman \n', 
+'sistem.']
 
 
 Referensi:
 
-1.  
+1.  https://www.w3schools.com/python/ref_file_readlines.asp
+2.  https://www.programiz.com/python-programming/file-operation

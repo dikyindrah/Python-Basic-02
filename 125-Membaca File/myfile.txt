@@ -1,0 +1,8 @@
+Dalam pekerjaan sehari-hari saya, 
+saya bekerja pada sistem terdistribusi 
+yang sangat besar, kompleks, yang 
+dibangun dari banyak modul dan paket 
+Python. Fokusnya sangat mirip dengan 
+apa yang Anda temukan, misalnya, di Java 
+dan, secara umum, dalam bahasa pemrograman 
+sistem.
