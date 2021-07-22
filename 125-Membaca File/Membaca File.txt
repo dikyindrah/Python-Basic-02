@@ -1,0 +1,11 @@
+Catatan:
+
+Membaca File
+
+Kita bisa membaca file dengan mode r dan method dari
+objek file.
+
+
+Referensi:
+
+1.  
