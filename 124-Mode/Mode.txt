@@ -1,0 +1,57 @@
+Catatan:
+
+Mode
+
+Mode bisa kita gunakan untuk menentukan penanganan
+apa yang akan kita gunakan pada file. Kita bisa 
+memilih nilai dari beberapa nilai argumen yang ada.
+
+[-] r - Membuka file untuk dibaca.
+
+[-] w - Membuka file untuk menulis. Membuat file baru 
+        jika tidak ada atau memperbarui jika file sudah 
+        ada.
+
+[-] x - Membuat dan membuka file. Jika file sudah ada
+        maka akan menimbulkan pengecualian.
+
+[-] a - Membuka file untuk menambahkan sesuatu pada file.
+        Membuat file baru jika file tidak ada.
+
+[-] b - Untuk mode biner. Mode ini khusus digunakan 
+        untuk menangani file biner.
+
+[-] t - Untuk mode teks. Ini adalah mode default dan 
+        digunakan untuk menangani file teks.
+
+[-] + - Membuka file untuk di perbarui (membaca dan 
+        menulis).
+
+[-] U - Mode baris baru universal. Mode ini tidak 
+        digunakan lagi karena kita bisa menentukan 
+        baris baru pada parameter newline.
+
+
+Untuk menentukan mode, kita hanya perlu memberikan
+nilai argumen pada parameter mode.
+
+Contoh:
+
+# Jika file berada pada direktori 
+# yang sama dengan program
+myfile = open('myfile.txt', 'w')
+
+# Jika file berada pada direktori yang 
+# berbeda dengan program
+myfile = open('D:/Python/myfile.txt', 'w')
+
+
+Jika kita membuka file tanpa menentukan mode, 
+maka secara default mode akan diatur pada nilai
+'rt' yang artinya 'membuka untuk membaca file teks'.
+
+
+Referensi:
+
+1.  https://www.programiz.com/python-programming/file-operation
+2.  https://www.w3schools.com/python/python_file_handling.asp

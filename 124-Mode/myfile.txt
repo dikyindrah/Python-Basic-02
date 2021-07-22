@@ -1,0 +1,1 @@
+saya sedang belajar file handling pada python.
