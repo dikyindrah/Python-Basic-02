@@ -1,0 +1,36 @@
+Catatan:
+
+Membuka File
+
+Dengan fungsi open() kita bisa membuka file. fungsi 
+ini akan mengembalikan objek file. Untuk membuka
+file kita bisa menggunakan dua cara yaitu.
+
+
+Mendefinisikan Nama File
+
+Cara ini digunakan jika file berada pada direktori 
+yang sama dengan program.
+
+Contoh:
+
+# Jika file berada pada direktori 
+# yang sama dengan program
+myfile = open('myfile.txt')
+
+
+Mendefinisikan Lokasi dan Nama File
+
+Cara ini digunakan jika file berada pada direktori 
+yang berbeda dengan program.
+
+Contoh:
+
+# Jika file berada pada direktori yang 
+# berbeda dengan program
+myfile = open('D:/Python/myfile.txt')
+
+
+Referensi:
+
+1.  https://www.programiz.com/python-programming/file-operation
