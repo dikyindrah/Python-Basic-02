@@ -204,6 +204,27 @@ Output:
 True
 
 
+Dari semua mode menulis file yang kita coba, disini 
+kita hanya bisa menulis data dan tidak bisa membaca 
+data. Untuk dapat membaca data kita hanya perlu 
+menambhakan mode '+' agar file bisa ditulis dan dibaca.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'a+')
+
+# Memeriksa apakah data bisa ditulis
+print(myfile.writable()) 
+# Memeriksa apakah data bisa dibaca
+print(myfile.readable())
+
+
+Output:
+
+True
+True
+
+
 Referensi:
 
 1.  https://www.w3schools.com/python/python_file_write.asp

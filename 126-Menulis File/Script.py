@@ -1,8 +1,8 @@
 # Mode 'w'
-myfile = open('D:/Programming/web/Python/Python-Basic-02/126-Menulis File/myfile.txt', 'w')
+# myfile = open('D:/Programming/web/Python/Python-Basic-02/126-Menulis File/myfile.txt', 'w')
 
-# write()
-myfile.write('ini adalah hari yang cerah')
+# # write()
+# myfile.write('ini adalah hari yang cerah')
 
 # # writelines()
 # list_string = ['ini ', 'adalah ', 'hari ', 'yang ', 'cerah ']
@@ -40,3 +40,13 @@ myfile.write('ini adalah hari yang cerah')
 
 # # writeable()
 # print(myfile.writable())
+
+
+# Mode '+'
+myfile = open('D:/Programming/web/Python/Python-Basic-02/126-Menulis File/myfile.txt', 'w+')
+
+# Memeriksa apakah data bisa ditulis
+print(myfile.writable()) 
+
+# Memeriksa apakah data bisa dibaca
+print(myfile.readable())
