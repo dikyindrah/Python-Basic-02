@@ -1,0 +1,210 @@
+Catatan:
+
+Menulis File
+
+Untuk menulis file dengan python, kita bisa membuka
+file dengan fungsi open() dalam mode 'w' (Membuka file 
+untuk ditulis), 'a' (Membuka file untuk menambahkan 
+sesuatu), dan 'x' (Membuat dan membuka file). Fungsi 
+open() akan mengembalikan objek file. Setelah objek file 
+dibuat, selanjutnya kita bisa menggunakan sejumlah method 
+untuk menulis file.
+
+Kita harus berhati-hati dengan mode 'w', karena akan 
+menimpa file jika sudah ada. Karena ini, semua data 
+sebelumnya akan dihapus.
+
+Sebagai contoh kita akan membuat sebuah file teks (.text) 
+bernama 'myfile' yang belum berisi apapun di dalamnya.  
+
+
+Mode 'w'
+
+Mode 'w' akan menulis dengan menimpa file. Maka dari
+itu kita harus berhati-hati dengan mode 'w', karena akan 
+menimpa file jika sudah ada. Karena ini, semua data 
+sebelumnya akan dihapus. Ada beberpa method yang bisa 
+digunakan pada mode ini.
+
+write()
+
+write() digunakan untuk menulis kedalam file yang ada.
+Kita hanya perlu memberikan nilai argumen berupa string
+ke parameter s.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'w')
+myfile.write('ini adalah hari yang cerah')
+
+Output:
+
+ini adalah hari yang cerah
+
+
+writelines()
+
+writelines() digunakan untuk menulis item dari list 
+kedalam file yang ada. Kita hanya perlu memberikan
+nilai argumen berupa list dengan item string ke 
+parameter iterable.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'w')
+list_string = ['ini ', 'adalah ', 'hari ', 'yang ', 'cerah ']
+myfile.writelines(list_string)
+
+Output:
+
+ini adalah hari yang cerah
+
+
+writeable() 
+
+writeable() digunakan untuk memeriksa apakah file 
+dapat ditulis atau tidak. Ini akan mengembalikan
+nilai boolean True jika bisa dan False jika tidak.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'w')
+print(myfile.writable())
+
+Output:
+
+True
+
+
+
+Mode 'a'
+
+Mode 'a' akan menulis dengan cara menambahkan data  
+pada file. Jadi saat kita menulis dengan mode ini
+data yang lama tidak akan hilang karena dihapus, 
+data yang baru ditulis akan ditambahkan ke bagian
+akhir dari data lama. Ada beberpa method yang bisa 
+digunakan pada mode ini.
+
+write()
+
+write() digunakan untuk menulis kedalam file yang ada.
+Kita hanya perlu memberikan nilai argumen berupa string
+ke parameter s.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'w')
+# myfile.write('ini adalah hari yang cerah\n')
+myfile.write('saatnya aku pergi ke sekolah\n')
+
+
+Output:
+
+ini adalah hari yang cerah
+saatnya aku pergi ke sekolah
+
+
+writelines()
+
+writelines() digunakan untuk menulis item dari list 
+kedalam file yang ada. Kita hanya perlu memberikan
+nilai argumen berupa list dengan item string ke 
+parameter iterable.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'w')
+list_string = ['ini ', 'adalah ', 'hari ', 'yang ', 'cerah \n']
+# myfile.writelines(list_string)
+myfile.writelines(list_string)
+
+
+Output:
+
+ini adalah hari yang cerah 
+ini adalah hari yang cerah 
+
+
+
+writeable() 
+
+writeable() digunakan untuk memeriksa apakah file 
+dapat ditulis atau tidak. Ini akan mengembalikan
+nilai boolean True jika bisa dan False jika tidak.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'w')
+print(myfile.writable())
+
+Output:
+
+True
+
+
+Mode 'x'
+
+Mode 'x' akan membuat dan membuka file. Jika file sudah 
+ada maka akan menimbulkan pengecualian. Jika kita menulis
+degan Mode 'x', maka ini hanya bisa digunakan untuk sekali 
+tulis. Jadi mode ini akan membuat file baru dan langsung 
+menulis data di dalamnya. Ada beberpa method yang bisa 
+digunakan pada mode ini.
+
+write()
+
+write() digunakan untuk menulis kedalam file yang ada.
+Kita hanya perlu memberikan nilai argumen berupa string
+ke parameter s.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'x')
+myfile.write('ini adalah hari yang cerah')
+
+Output:
+
+ini adalah hari yang cerah
+
+
+writelines()
+
+writelines() digunakan untuk menulis item dari list 
+kedalam file yang ada. Kita hanya perlu memberikan
+nilai argumen berupa list dengan item string ke 
+parameter iterable.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'x')
+list_string = ['ini ', 'adalah ', 'hari ', 'yang ', 'cerah \n']
+myfile.writelines(list_string)
+
+
+Output:
+
+ini adalah hari yang cerah
+
+
+writeable() 
+
+writeable() digunakan untuk memeriksa apakah file 
+dapat ditulis atau tidak. Ini akan mengembalikan
+nilai boolean True jika bisa dan False jika tidak.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'x')
+print(myfile.writable())
+
+
+Output:
+
+True
+
+
+Referensi:
+
+1.  https://www.w3schools.com/python/python_file_write.asp
+2.  https://www.programiz.com/python-programming/file-operation
