@@ -1,0 +1,64 @@
+Catatan:
+
+Menutup File
+
+Ketika kita selesai melakukan operasi pada file, kita 
+perlu menutup file dengan benar. Menutup file akan 
+membebaskan sumber daya yang terikat dengan file 
+tersebut. Itu dilakukan dengan menggunakan metode 
+close() yang tersedia di Python.
+
+Python memiliki pengumpul sampah untuk membersihkan 
+objek yang tidak direferensikan tetapi kita tidak 
+boleh mengandalkannya untuk menutup file.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'r')
+print(myfile.read())
+myfile.close()
+print('file berhasil ditutup...')
+
+Output:
+
+file berhasil ditutup...
+
+
+Cara ini tidak sepenuhnya aman. Jika pengecualian terjadi 
+saat kita melakukan beberapa operasi dengan file, program 
+keluar tanpa menutup file. Cara yang lebih aman adalah 
+dengan menggunakan penanganan pengecualian (exception 
+handling).
+
+Contoh:
+
+import sys
+
+try:
+    myfile = open('D:/Python/myfile.txt', 'r')
+    print(myfile.read())
+except:
+    print(sys.exc_info()[0])
+finally:
+    try:
+        myfile.close()
+        print('file berhasil ditutup...')
+    except:
+        print(sys.exc_info()[0])
+
+Output:
+
+hari ini adalah hari yang cerah,
+matahari bersinar terang.
+file berhasil ditutup...
+
+
+Dengan menggunakan penanganan pengecualian (exception 
+handling), kita menjamin bahwa file ditutup dengan 
+benar bahkan jika pengecualian muncul yang menyebabkan 
+aliran program berhenti.
+
+
+Referensi:
+
+1.  https://www.programiz.com/python-programming/file-operation
