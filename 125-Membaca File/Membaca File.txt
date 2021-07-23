@@ -14,14 +14,14 @@ bernama 'myfile' yang berisi teks di dalamnya.
 
 read()
 
-read() bisa kita gunakan untuk membaca seluruh isi
-file dan membaca beberapa karakter pada file.
+read() bisa kita gunakan untuk membaca seluruh data 
+pada file dan membaca beberapa karakter pada file.
 
 Contoh:
 
 myfile = open('D:/Python/myfile.txt', 'r')
 
-# Membaca seluruh isi pada file
+# Membaca seluruh data pada file
 print(myfile.read())
 
 # Membaca beberapa karakter pada file
@@ -44,14 +44,14 @@ Dalam
 
 readline()
 
-readline() bisa kita gunakan untuk membaca isi file 
-baris demi baris.
+readline() bisa kita gunakan untuk membaca data pada 
+file baris demi baris.
 
 Contoh:
 
 myfile = open('D:/Python/myfile.txt', 'r')
 
-# Membaca isi file baris demi baris
+# Membaca data file baris demi baris
 print(myfile.readline())
 print(myfile.readline())
 print(myfile.readline())
@@ -66,14 +66,15 @@ yang sangat besar, kompleks, yang
 
 Perulangan
 
-Kita bisa menggunakan perulangan untuk membaca isi file.
+Kita bisa menggunakan perulangan untuk membaca data
+pada file.
 
 
 Contoh:
 
 myfile = open('D:/Python/myfile.txt', 'r')
 
-# Membaca isi file dengan perulangan 
+# Membaca data file dengan perulangan 
 for i in myfile:
     print(i, end='')
 
@@ -110,16 +111,16 @@ True
 
 readline()
 
-readline() bisa kita gunakan untuk menyimpan isi file
-kedalam list. Isi yang disimpan adalah isi file dalam 
-baris. 
+readline() bisa kita gunakan untuk menyimpan data pada 
+file kedalam list. data yang disimpan adalah data file 
+dalam baris. 
 
 Contoh:
 
-# Menyimpan isi file kedalam list
-# Menyimpan seluruh baris isi file kedalam list
-list_seluruh_isi_file = myfile.readlines()
-print(list_seluruh_isi_file)
+# Menyimpan data file kedalam list
+# Menyimpan seluruh baris data file kedalam list
+list_data = myfile.readlines()
+print(list_data)
 
 Output:
 
@@ -131,6 +132,41 @@ Output:
 'apa yang Anda temukan, misalnya, di Java \n', 
 'dan, secara umum, dalam bahasa pemrograman \n', 
 'sistem.']
+
+
+seek() dan tell()
+
+seek() digunakan untuk mengubah posisi kursor pada 
+file saat ini dan tell digunakan untuk mengetahui
+posisi kursor.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'r')
+
+# Mengubah posisi kursor
+myfile.seek(50)
+
+# Mengetahui posisi kursor
+print(myfile.tell())
+
+print('')
+print(myfile.read())
+
+
+Output:
+
+
+50
+
+ada sistem terdistribusi 
+yang sangat besar, kompleks, yang 
+dibangun dari banyak modul dan paket 
+Python. Fokusnya sangat mirip dengan
+apa yang Anda temukan, misalnya, di Java
+dan, secara umum, dalam bahasa pemrograman
+sistem.
+
 
 
 Referensi:
