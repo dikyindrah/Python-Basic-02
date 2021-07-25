@@ -1,0 +1,56 @@
+Catatan:
+
+Buffering
+
+Parameter Buffering digunakan untuk mengatur kebijakan 
+buffering. Buffering sendiri adalah proses yang terjadi 
+ketika data sedang dipindahkan ke memori yang dinamakan 
+buffer. Buffer adalah memori yang digunakan untuk 
+menyimpan sementara data yang sedang dipindahkan dari 
+suatu tempat ke tempat lain. Tujuanya adalah untuk 
+menyimpan data tepat sebelum digunakan serta mengurangi 
+perbedaan kecepatan waktu antara input dan output. Kita 
+bisa mengatur parameter buffering ini dengan beberpa 
+argumen yaitu '0' untuk menonaktifkan buffering (hanya 
+diperbolehkan dalam mode biner) '1' untuk memilih buffering 
+baris (hanya dapat digunakan dalam mode teks) 'integer > 
+1' untuk menunjukkan ukuran buffer chunk ukuran tetap.
+
+Tidak menggunakan buffering.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'a')
+myfile.write('hari ini adalah hari yang cerah, matahari bersinar terang.')
+myfile.close()
+
+# Memeriksa waktu proses dalam hitungan detik
+waktu = time.time()
+print(f'waktu proses {waktu} detik')
+
+
+Output:
+
+waktu proses 1627179584.7942574 detik
+
+
+Menggunakan buffering.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', 'a', 1)
+myfile.write('hari ini adalah hari yang cerah, matahari bersinar terang.')
+myfile.close()
+
+# Memeriksa waktu proses dalam hitungan detik
+waktu = time.time()
+print(f'waktu proses {waktu} detik')
+
+Output:
+
+waktu proses 1627179629.1660619 detik
+
+
+Referensi:
+
+1.  https://stackoverflow-com.translate.goog/questions/29712445/what-is-the-use-of-buffering-in-pythons-built-in-open-function?_x_tr_sl=en&_x_tr_tl=id&_x_tr_hl=id&_x_tr_pto=ajax,sc,elem
