@@ -16,11 +16,17 @@ file pada teks (.text) saja.
 
 Python menyediakan fungsi bawaan (built-in funciton)
 dengan nama open() yang bisa kita gunakan untuk penanganan 
-file. Fungsi open() sendiri memiliki beberapa parameter 
-utama.
+file. Fungsi open() sendiri sebenarnya berasal dari modul
+IO yaitu io.open(), namun python memungkinkan kita untuk 
+bisa menggunakan fungsi ini tanpa harus mengimport modul 
+terlebih dahulu.
+
+Fungsi open() memiliki beberapa parameter utama yaitu:
 
 open(file, mode='r', buffering=-1, encoding=None, errors=None,
 newline=None, closefd=True, opener=None)
+
+Keterangan:
 
 [-] file - Menentukan lokasi dan nama file. Jika file 
            yang akan ditangani didalam satu direktori yang 
@@ -60,16 +66,17 @@ newline=None, closefd=True, opener=None)
                biner agar bisa di pahami dan proses oleh komputer.
                Contoh character encoding atau pengkodean karakter
                yang bisa digunakan adalah ASCII dan UTF.
-[-] errors - Untuk menentukan string yang akan menangani kesalahan 
-             encoding/decoding.
-[-] newline - Untuk menetukan baris baru. Nilai yang tersedia untuk
-              parameter ini antaralain None, ' ', '\n', '\r', dan 
-              '\r\n' 
+[-] errors - Untuk menentukan penanganan penecualian pada proses 
+             encoding/decoding jika terjadi kesalahan.
+[-] newline - Untuk mengatur baris baru secara universal (hanya 
+              barlaku pada mode teks). Nilai argumen yang bisa kita 
+              gunakan pada parameter ini antara lain None, ' ', '\n', 
+              '\r', dan '\r\n'.
 [-] closefd - Untuk menutup deskriptor file saat file utama ditutup.
               Nilai untuk parameter ini harus diatur True, jika sebaliknya
               maka pengecualian akan dimunculkan.
 [-] opener - Untuk mengembalikan deskriptor file terbuka. Ini bisa kita atur
-            nilainya menjadi none.
+             nilainya menjadi none.
 
 
 Referensi:
