@@ -1,0 +1,40 @@
+Catatan:
+
+Errors
+
+Secara default, Python memunculkan pengecualian 
+UnicodeError pada kesalahan encoding atau decoding. 
+Namun, kita dapat menentukan bagaimana kesalahan ini 
+ditangani menggunakan parameter errors.
+
+Parameter errors digunakan untuk menentukan penanganan
+penecualian pada proses encoding/decoding jika terjadi
+kesalahan. Parameter ini bersifat optional yang artinya 
+bisa kita berikan dan bisa juga tidak.
+
+Di bawah ini adalah nilai parameter yang bisa kita
+gunakan:
+
+Parameter           Deskripsi
+'strict' (Default)	memunculkan pengecualian UnicodeError pada kegagalan
+'backslashreplace'	karakter yang tidak dapat dikodekan diganti dengan garis miring terbalik
+'ignore'	        karakter yang tidak dapat dikodekan diabaikan
+'namereplace'	    karakter yang tidak dapat dikodekan diganti dengan namanya
+'replace'	        karakter yang tidak dapat dikodekan diganti dengan tanda tanya
+'xmlcharrefreplace'	'xmlcharrefreplace' karakter yang tidak dapat dikodekan diganti dengan karakter xml
+
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', mode='r', buffering=1, encoding='UTF-8', errors='ignore')
+print(myfile.read())
+myfile.close()
+
+Output:
+
+hello world
+
+
+Referensi:
+
+1.  https://www.learnbyexample.org/python-open-function/
