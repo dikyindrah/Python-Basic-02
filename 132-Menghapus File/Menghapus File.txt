@@ -1,0 +1,43 @@
+Catatan
+
+Menghapus File 
+
+Untuk mengahapus file kita perlu mengimport modul os.
+Modul os adalah modul bawaan python yang bisa kita 
+gunakan untuk berinteraksi dengan sistem operasi. 
+Modul ini menyediakan cara portabel untuk menggunakan 
+fungsionalitas yang bergantung pada sistem operasi 
+contohnya seperti menghapus file atau direktori.
+
+Contoh:
+
+import os
+from os import path
+import sys
+
+myfile_path = 'D:/Python/myfile.txt'
+
+# Cara pertama
+# os.remove(myfile_path)
+# print('file berhasil dihapus')
+
+
+# Cara kedua
+try:
+    if os.path.exists(myfile_path):
+        os.remove(myfile_path)
+        print('file berhasil di hapus')
+    else:
+        print('file tidak tersedia')
+except:
+    print(sys.exc_info()[0])
+
+Output:
+
+file berhasil di hapus
+
+
+Referensi:
+
+1.  https://www.w3schools.com/python/python_file_remove.asp
+2.  https://www.geeksforgeeks.org/os-module-python-examples/
