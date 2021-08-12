@@ -1,0 +1,54 @@
+Catatan:
+
+Encoding
+
+Encoding atau pengkodean sendiri adalah proses 
+pengubahan data ke dalam format yang diperlukan 
+untuk sejumlah kebutuhan pemrosesan informasi. 
+Salah satu contoh dari ini adalah character 
+encoding atau pengkodean karakter untuk mengubah 
+karakter ke dalam bentuk biner agar bisa di pahami 
+dan proses oleh komputer. Contoh character encoding 
+atau pengkodean karakter yang bisa digunakan adalah 
+ASCII dan UTF.
+
+Pada fungsi open() parameter encoding atau pengkodean 
+secara default bergantung pada platform yang sedang
+kita gunakan untuk menulis kode program saat ini. Misal
+jika kita melakukan penanganan file pada teks kita 
+menggunakan windows, maka parameter pengkodean akan 
+menggunakan cp1252, tetapi jika kita menggunakan linux, 
+maka parameter pengkodean akan menggunakan utf-8.
+
+Jadi, sebaiknya kita tidak boleh bergantung pada 
+pengkodean default atau kode program kita akan 
+berperilaku berbeda di platform yang berbeda.
+
+Oleh karena itu, saat kita melakukan penanganan file 
+pada teks, sangat disarankan untuk menentukan jenis 
+pengkodean.
+
+Contoh:
+
+import sys
+
+try:
+    myfile = open('D:/Python/myfile.txt', 'a', 1, 'utf-8')
+    myfile.write('File berhasil ditulis\n')
+except:
+    print(sys.exc_info()[0])
+finally:
+    myfile.close()
+
+# Memeriksa format encoding
+print(myfile.encoding)
+
+
+Output:
+
+utf-8
+
+
+Referensi:
+
+1.  https://www.programiz.com/python-programming/file-operation
