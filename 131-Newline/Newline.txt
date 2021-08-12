@@ -1,0 +1,46 @@
+Catatan:
+
+Newline 
+
+Parameter newline digunakan untuk mengatur baris baru 
+secara universal (hanya barlaku pada mode teks). Nilai
+argumen yang bisa kita gunakan pada parameter ini 
+antara lain None, ' ', '\n', '\r', dan '\r\n'. 
+
+Parameter ini bekerja sebagai berikut:
+
+Pada input, jika baris baru adalah Tidak Ada, mode 
+baris baru universal diaktifkan. Baris dalam input 
+dapat diakhiri dengan '\n', '\r', atau '\r\n', dan 
+ini diterjemahkan menjadi '\n' sebelum dikembalikan 
+ke pemanggil. Jika '', mode saluran baru universal 
+diaktifkan, tetapi akhiran saluran dikembalikan ke 
+penelepon tanpa diterjemahkan. Jika memiliki salah 
+satu nilai hukum lainnya, jalur input hanya diakhiri 
+oleh string yang diberikan, dan akhir baris dikembalikan 
+ke pemanggil tanpa diterjemahkan.
+
+Pada output, jika baris baru adalah Tidak Ada, semua 
+karakter '\n' yang ditulis akan diterjemahkan ke pemisah 
+baris default sistem, os.linesep. Jika baris baru adalah 
+'' atau '\n', tidak ada terjemahan yang dilakukan. Jika 
+baris baru adalah salah satu dari nilai hukum lainnya, 
+karakter '\n' apa pun yang ditulis akan diterjemahkan
+ke string yang diberikan.
+
+Contoh:
+
+myfile = open('D:/Python/myfile.txt', mode='r', buffering=1, encoding='UTF-8', errors='ignore', newline='\n')
+
+Output:
+
+myfile.write('saya')
+myfile.write('sedang')
+myfile.write('belajar')
+myfile.write('python')
+myfile.close()
+
+
+Referensi:
+
+1.  

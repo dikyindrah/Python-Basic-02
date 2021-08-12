@@ -1,0 +1,6 @@
+myfile = open('D:/Programming/web/Python/Python-Basic-02/131-Newline/myfile.txt', mode='a', buffering=1, encoding='UTF-8', errors='ignore', newline='\n')
+myfile.write('saya')
+myfile.write('sedang')
+myfile.write('belajar')
+myfile.write('python')
+myfile.close()
