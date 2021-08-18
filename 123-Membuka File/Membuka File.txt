@@ -4,7 +4,8 @@ Membuka File
 
 Dengan fungsi open() kita bisa membuka file. fungsi 
 ini akan mengembalikan objek file. Untuk membuka
-file kita bisa menggunakan dua cara yaitu.
+file dengan fungsi ini kita bisa menggunakan dua cara 
+yaitu.
 
 
 Mendefinisikan Nama File
