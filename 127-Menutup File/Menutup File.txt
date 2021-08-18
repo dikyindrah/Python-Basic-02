@@ -5,12 +5,15 @@ Menutup File
 Ketika kita selesai melakukan operasi pada file, kita 
 perlu menutup file dengan benar. Menutup file akan 
 membebaskan sumber daya yang terikat dengan file 
-tersebut. Itu dilakukan dengan menggunakan metode 
-close() yang tersedia di Python.
+tersebut sehingga bisa mengurangi proses dan penggunaan 
+memori pada komputer kita. 
 
 Python memiliki pengumpul sampah untuk membersihkan 
 objek yang tidak direferensikan tetapi kita tidak 
 boleh mengandalkannya untuk menutup file.
+
+Menutup file bisa dilakukan dengan menggunakan metode 
+close() yang tersedia di Python.
 
 Contoh:
 
@@ -58,6 +61,27 @@ handling), kita menjamin bahwa file ditutup dengan
 benar bahkan jika pengecualian muncul yang menyebabkan 
 aliran program berhenti.
 
+Cara lain yang bisa kita gunakan untuk menutup file 
+adalah menggunakan keyword 'with'. Dengan keyword with, 
+kita tidak perlu menggunakan penanganan pengecualian dan 
+fungsi close() untuk menutup file karena file akan 
+ditutup secara otomatis setelah operasi penanganan file 
+selesai dilakukan.
+
+Contoh:
+
+with open('D:/Python/myfile.txt', mode='a', encoding='UTF-8') as f:
+    f.write('hello world\n')
+    print('file berhasil ditulis.')
+
+
+Output:
+
+file berhasil di tulis.
+
+
+Dengan menggunakan keyword with, kita bisa membuat kode 
+program terlihat lebih rapih.
 
 Referensi:
 
