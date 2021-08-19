@@ -1,0 +1,53 @@
+Catatan:
+
+CSV
+
+CSV (Comma Separated Values) adalah format file 
+sederhana yang digunakan untuk menyimpan data tabular, 
+seperti spreadsheet atau database. File CSV menyimpan 
+data tabular (angka dan teks) kedalam teks biasa. Setiap 
+baris file adalah catatan data (record). Setiap record 
+terdiri dari satu atau lebih bidang (field), dipisahkan 
+dengan koma. Tanda koma digunakan sebagai pemisah (sparator) 
+data (data). Berikut ini adalah contoh file .CSV:
+
+Contoh:
+
+Nomor, Nama, Profesi
+1, Ardi wibowo, IT Support
+2, Diky Indra H, Programmer
+3, Fitrian Saputra, Supervisor
+
+
+Pada contoh diatas baris pertama adalah field, field
+merupakan nama data yang disimpan, misalnya field
+'Profesi' yang akan menyimpan data profesi seseorang. 
+Baris kedua dan seterusnya adalah record, record merupakan 
+data yang disimpan berdasarkan field, misalnya 'Diky Indra
+H' adalah record dari field 'Nama'. Setiap data seperti
+field dan record dipisah dengan tanda koma, tujuanya 
+adalah sebagai pemisah agar data sesuai dengan tempatnya.
+
+Jika contoh diatas kita petakan kedalam sebuah tabel
+maka akan memiliki bentuk seperti ini:
+ 
++-----+---------------+----------+
+|Nomor|Nama           |Profesi   |
++-----+---------------+----------+
+|1    |Ardi wibowo    |IT Support|
+|2    |Diky Indra H   |Programmer|
+|3    |Fitrian Saputra|Supervisor|
++-----+---------------+----------+
+
+Tabel tersebut memili 3 kolom dan 4 baris, dimana 
+baris pertama adalah field dan baris kedua dst adalah
+record. Kolom pertama menyimpan data Nomor, kolom
+kedua menyimpan data Nama, dan kolom ketiga menyimpan
+data Profesi.
+
+
+Referensi:
+
+1.  https://www.geeksforgeeks.org/working-csv-files-python/
+2.  https://www.programiz.com/python-programming/csv
+3.  https://realpython.com/python-csv/
