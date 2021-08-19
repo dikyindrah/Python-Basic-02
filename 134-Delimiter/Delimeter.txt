@@ -1,0 +1,44 @@
+Catatan:
+
+Delimiter
+
+Delimiter adalah karakter pemisah (sparator) pada 
+file csv. Ini digunakan sebagai pembatas pada data 
+yang berbeda. Delimiter umumnya menggunakan tanda 
+koma (,), namun terdapat delimiter lain yang bisa 
+kita gunakan yaitu tanda titik koma (;), dan tanda 
+titik dua (:).
+
+File .csv dengan delimiter tanda koma (,)
+
+Contoh:
+
+Nomor,Nama,Profesi
+1,Ardi wibowo,IT Support
+2,Diky Indra H,Programmer
+3,Fitrian Saputra,Supervisor
+
+
+File .csv dengan delimiter tanda titik koma (;)
+
+Contoh:
+
+Nomor;Nama;Profesi
+1;Ardi wibowo;IT Support
+2;Diky Indra H;Programmer
+3;Fitrian Saputra;Supervisor
+
+
+File .csv dengan delimiter tanda titik dua (:)
+
+Contoh:
+
+Nomor:Nama:Profesi
+1:Ardi wibowo:IT Support
+2:Diky Indra H:Programmer
+3:Fitrian Saputra:Supervisor
+
+
+Referensi:
+
+1.  https://realpython.com/python-csv/
