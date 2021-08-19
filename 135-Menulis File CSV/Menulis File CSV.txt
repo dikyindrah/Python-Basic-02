@@ -1,0 +1,76 @@
+Catatan:
+
+Menulis File CSV
+
+Sebelum menulis file csv, kita perlu membuka file 
+terlebih dahulu dengan fungsi open(). Kita bisa 
+menggunakan keyword 'white' untuk penulisan kode 
+program yang lebih mudah.
+
+Untuk menulis file csv dengan python kita perlu
+mengimport modul csv kemudian membuat objek untuk 
+ditulis menggunakan method csv.write(). Setelah 
+objek dibuat, selanjutnya kita bisa menulis pada 
+objek tersebut dengan fungsi writerow() atau 
+writerows().
+
+writerow()
+
+writerow() digunakan untuk menulis satu baris dalam 
+satu waktu. Baris bidang (field) dapat ditulis 
+menggunakan metode ini.
+
+Contoh:
+
+import csv
+
+with open('myfile.csv', mode='w', newline='\n') as file:
+    write = csv.writer(file)
+    write.writerow(['No','Nama','Profesi'])
+    write.writerow(['1','Diky Indra H','Programmer'])
+    write.writerow(['2','Ardi Wibowo','IT Support'])
+    write.writerow(['3','Tubagus Bagas','Manager'])
+
+
+Output:
+
+No,Nama,Profesi
+1,Diky Indra H,Programmer
+2,Ardi Wibowo,IT Support
+3,Tubagus Bagas,Manager
+
+
+
+writerows()
+
+writerows() digunakan untuk menulis beberapa baris 
+sekaligus. Ini dapat digunakan untuk menulis daftar 
+baris.
+
+Contoh:
+
+list_data = [['No','Nama','Profesi'], 
+             ['1','Diky Indra H','Programmer'],
+             ['2','Ardi Wibowo','IT Support'],
+             ['3','Tubagus Bagas','Manager']]
+
+with open('myfile.csv', mode='w', newline='\n') as file:
+    write = csv.writer(file)
+    write.writerows(list_data)
+
+
+Output:
+
+No,Nama,Profesi
+1,Diky Indra H,Programmer
+2,Ardi Wibowo,IT Support
+3,Tubagus Bagas,Manager
+
+
+
+
+
+Referensi:
+
+1.  https://www.programiz.com/python-programming/csv
+2.  https://www.geeksforgeeks.org/writing-csv-files-in-python/
