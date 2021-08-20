@@ -1,0 +1,110 @@
+Catatan:
+
+
+Menulis File CSV Dengan Delimiter Khusus
+
+Secara default, koma digunakan sebagai pembatas dalam 
+file CSV. Namun, beberapa file CSV dapat menggunakan 
+pembatas selain koma. Salah satu contoh yang populer 
+adalah pembatas dengan tanda pipa (|).
+
+Misalkan kita ingin menggunakan tanda pipa (|) sebagai 
+pembatas dalam sebuah file .csv. Untuk menulis file ini, 
+kita dapat melewatkan nilai argumen ke parameter delimiter 
+ke fungsi csv.writer().
+
+Contoh:
+
+import csv
+
+fields = ['no','nama','kontribusi']
+records = [['1','guido van rossum','python'],
+           ['2','tim barners-lee','world wide web'],
+           ['3','linus torvalds','linux kernel']]
+
+with open('myfile.csv', mode='w', newline='\n') as file:
+    write = csv.writer(file, delimiter='|')
+    write.writerow(fields)
+    write.writerows(records)
+
+Contoh:
+
+no|nama|kontribusi
+1|guido van rossum|python
+2|tim barners-lee|world wide web
+3|linus torvalds|linux kernel
+
+
+Kita juga bisa memberikan tanda kutip pada setiap 
+data yang ditulis. Kita hanya perlu memberikan
+nilai argumen pada parameter quoting di fungsi 
+csv.writer().
+
+Contoh:
+
+import csv
+
+fields = ['no','nama','kontribusi']
+records = [['1','guido van rossum','python'],
+           ['2','tim barners-lee','world wide web'],
+           ['3','linus torvalds','linux kernel']]
+
+with open('myfile.csv', mode='w', newline='\n') as file:
+    write = csv.writer(file, delimiter=',', quoting=csv.QUOTE_NONNUMERIC)
+    write.writerow(fields)
+    write.writerows(records)
+
+
+Output:
+
+"no","nama","kontribusi"
+"1","guido van rossum","python"
+"2","tim barners-lee","world wide web"
+"3","linus torvalds","linux kernel"
+
+
+Pada kode program diatas, kita memberikan konstanta 
+csv.QUOTE_NONNUMERIC sebagai nilai argumen pada parameter
+quoting. Konstanta csv.QUOTE_NONNUMERIC akan memberikan 
+tanda kutip pada seluruh data non-numerik. Ada 3 konstanta 
+standar lainnya yang dapat Anda berikan ke quoting
+parameter: 
+
+[-] csv.QUOTE_ALL - memberikan tanda kutip pada seluruh 
+                    data yang ada.
+[-] csv.QUOTE_MINIMAL - memberikan tanda kutip pada karaker
+                        khusus.
+[-] csv.QUOTE_NONE - tidak memberikan tanda kutip pada data
+                     (ini adalah nilai default).
+
+
+Kita juga bisa memberikan tanda kutip dengan karaker 
+khusus. Kita hanya perlu memberikan nilai argumen 
+pada parameter quotechar di fungsi csv.writer().
+
+Contoh:
+
+import csv
+
+fields = ['no','nama','kontribusi']
+records = [['1','guido van rossum','python'],
+           ['2','tim barners-lee','world wide web'],
+           ['3','linus torvalds','linux kernel']]
+
+with open('myfile.csv', mode='w', newline='\n') as file:
+    write = csv.writer(file, delimiter=';', quoting=csv.QUOTE_ALL, quotechar='*')
+    write.writerow(fields)
+    write.writerows(records)
+
+
+Output:
+
+*no*;*nama*;*kontribusi*
+*1*;*guido van rossum*;*python*
+*2*;*tim barners-lee*;*world wide web*
+*3*;*linus torvalds*;*linux kernel*
+
+
+Referensi:
+
+1.  https://www.programiz.com/python-programming/writing-csv-files
