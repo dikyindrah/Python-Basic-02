@@ -6,8 +6,8 @@ Delimiter adalah karakter pemisah (sparator) pada
 file csv. Ini digunakan sebagai pembatas pada data 
 yang berbeda. Delimiter umumnya menggunakan tanda 
 koma (,), namun terdapat delimiter lain yang bisa 
-kita gunakan yaitu tanda titik koma (;), dan tanda 
-titik dua (:).
+kita gunakan yaitu tanda titik koma (;), tanda titik 
+dua (:) dan tanda pipa (|).
 
 File .csv dengan delimiter tanda koma (,)
 
@@ -37,6 +37,15 @@ Nomor:Nama:Profesi
 1:Ardi wibowo:IT Support
 2:Diky Indra H:Programmer
 3:Fitrian Saputra:Supervisor
+
+File .csv dengan delimiter tanda pipa (|)
+
+Contoh:
+
+Nomor|Nama|Profesi
+1|Ardi wibowo|IT Support
+2|Diky Indra H|Programmer
+3|Fitrian Saputra|Supervisor
 
 
 Referensi:
