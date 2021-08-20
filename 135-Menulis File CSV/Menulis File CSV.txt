@@ -56,7 +56,7 @@ records = [['1','Diky Indra H','Programmer'],
            ['2','Ardi Wibowo','IT Support'],
            ['3','Tubagus Bagas','Manager']]
 
-with open('D:/Programming/web/Python/Python-Basic-02/135-Menulis File CSV/myfile.csv', mode='w', newline='\n') as file:
+with open('myfile.csv', mode='w', newline='\n') as file:
     write = csv.writer(file)
     # Menulis fields
     write.writerow(fields)
@@ -72,7 +72,36 @@ No,Nama,Profesi
 3,Tubagus Bagas,Manager
 
 
+Cara lain yang bisa kita gunakan untuk menulis 
+file csv adalah dengan menggunakan csv.DictWriter().
 
+csv.DictWriter()
+
+kelas csv.DictWriter() digunakan untuk menulis file 
+csv dari dictionary. Sintaks minimal dari kelas ini 
+adalah 'csv.DictWriter(file, fieldnames)', dimana 
+file adalah file csv yang ingin kita tulis dan 
+fieldnames adalah urutan kunci yang mengidentifikasi 
+urutan nilai dalam dictionary.
+
+Contoh:
+
+import csv
+
+with open('myfile.csv', mode='w', newline='\n') as file:
+    fieldnames = ['id','nama','alamat']
+    write = csv.DictWriter(file, fieldnames=fieldnames)
+
+    write.writeheader()
+    write.writerow({'id':'id001','nama':'diky indra h','alamat':'kedaton'})
+    write.writerow({'id':'id002','nama':'dian budi p','alamat':'way kandis'})
+
+
+Output:
+
+id,nama,alamat
+id001,diky indra h,kedaton
+id002,dian budi p,way kandis
 
 
 Referensi:
