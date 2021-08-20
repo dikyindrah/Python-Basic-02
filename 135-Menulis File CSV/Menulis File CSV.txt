@@ -108,3 +108,4 @@ Referensi:
 
 1.  https://www.programiz.com/python-programming/csv
 2.  https://www.geeksforgeeks.org/writing-csv-files-in-python/
+3.  https://thepythonguru.com/python-how-to-read-and-write-csv-files/
