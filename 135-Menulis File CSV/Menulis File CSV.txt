@@ -4,12 +4,12 @@ Menulis File CSV
 
 Sebelum menulis file csv, kita perlu membuka file 
 terlebih dahulu dengan fungsi open(). Kita bisa 
-menggunakan keyword 'white' untuk penulisan kode 
+menggunakan keyword 'with' untuk penulisan kode 
 program yang lebih mudah.
 
 Untuk menulis file csv dengan python kita perlu
 mengimport modul csv kemudian membuat objek untuk 
-ditulis menggunakan method csv.write(). Setelah 
+ditulis menggunakan method csv.writer(). Setelah 
 objek dibuat, selanjutnya kita bisa menulis pada 
 objek tersebut dengan fungsi writerow() atau 
 writerows().
