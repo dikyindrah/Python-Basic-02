@@ -1,0 +1,99 @@
+Catatan:
+
+Membaca File CSV
+
+Sebelum membaca file csv, kita perlu membuka file 
+terlebih dahulu dengan fungsi open(). Kita bisa 
+menggunakan keyword 'with' untuk penulisan kode 
+program yang lebih mudah.
+
+Untuk membaca file csv dengan python kita perlu
+mengimport modul csv kemudian membuat objek untuk 
+dibaca menggunakan method csv.reader(). Setelah 
+objek dibuat, selanjutnya kita bisa membaca objek 
+tersebut dengan perulangan.
+
+Contoh:
+
+import csv
+
+with open('myfile.csv', mode='r', newline='\n') as file:
+    read = csv.reader(file)
+    for row in read:
+        print(row)
+
+Output:
+
+['no', ' nama', ' profesi ']
+['1', ' diky indra h', ' programmer']
+['2', ' ardi wibowo', ' it support']
+['3', ' tubagus bagas', ' manager']
+
+
+Pada program tersebut, data pada setiap baris dari 
+file .csv dibaca, diubah ke bentuk list, dan ditampilkan
+menggunakan perulangan. Dengan cara yang sama kita 
+juga bisa menulis kode program seperti ini.
+
+Contoh:
+
+import csv
+
+with open('myfile.csv', mode='r', newline='\n') as file:
+    read = csv.reader(file)
+    data = list(read)
+
+    for i in range(len(data)):
+        for j in range(len(data[i])):
+            print(data[i][j], end=' ')
+        print('')
+
+Output:
+
+no  nama  profesi
+1  diky indra h  programmer
+2  ardi wibowo  it support
+3  tubagus bagas  manager
+
+
+Cara lain yang bisa kita gunakan untuk membaca
+file csv adalah dengan menggunakan csv.DictReader().
+
+csv.DictReader()
+
+kelas csv.DictReader() digunakan untuk membaca file 
+csv sebagai dictionary. Misalkan kita memiliki file
+.csv dengan data berikut ini:
+
+no, nama, profesi 
+1, diky indra h, programmer
+2, ardi wibowo, it support
+3, tubagus bagas, manager
+
+Mari kita lihat bagaimana csv.DictReader() bisa 
+digunakan.
+
+Contoh:
+
+import csv
+
+with open('myfile.csv', mode='r', newline='\n') as file:
+    read_dict = csv.DictReader(file)
+    for row in read_dict:
+        print(row)
+
+Output:
+
+{'no': '1', ' nama': ' diky indra h', ' profesi ': ' programmer'}
+{'no': '2', ' nama': ' ardi wibowo', ' profesi ': ' it support'}
+{'no': '3', ' nama': ' tubagus bagas', ' profesi ': ' manager'}
+
+
+Pada program tersebut, bisa kia lihat data baris 
+pertama digunakan sebagai key dan data pada baris
+kedua dst digunakan sebagai value.
+
+
+Referensi:
+
+1.  https://www.programiz.com/python-programming/reading-csv-files
