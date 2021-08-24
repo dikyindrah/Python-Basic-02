@@ -91,7 +91,30 @@ Output:
 
 Pada program tersebut, bisa kia lihat data baris 
 pertama digunakan sebagai key dan data pada baris
-kedua dst digunakan sebagai value.
+kedua dst digunakan sebagai value. Dengan cara yang 
+sama kita juga bisa menulis kode program seperti ini.
+
+Contoh:
+
+with open('myfile.csv', mode='r', newline='\n') as file:
+    csv_file = csv.DictReader(file)
+    list_csv_file = list(csv_file)
+    for i in range(len(list_csv_file)):
+        if i == 0:
+            for key in list_csv_file[i].keys():
+                print(key, end='')
+            print('')
+        
+        for value in list_csv_file[i].values():
+            print(value, end='')
+        print('')
+
+Output:
+
+no nama profesi
+1 diky indra h programmer
+2 ardi wibowo it support
+3 tubagus bagas manager
 
 
 Referensi:

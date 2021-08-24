@@ -17,7 +17,22 @@ import csv
 #         print('')
 
 # Membaca file csv sebagai dictionary
+# Cara pertama
+# with open('D:/Programming/web/Python/Python-Basic-02/138-Membaca File CSV/myfile.csv', mode='r', newline='\n') as file:
+#     read_dict = csv.DictReader(file)
+#     for row in read_dict:
+#         print(row)
+
+# Cara kedua
 with open('D:/Programming/web/Python/Python-Basic-02/138-Membaca File CSV/myfile.csv', mode='r', newline='\n') as file:
-    read_dict = csv.DictReader(file)
-    for row in read_dict:
-        print(row)
+    csv_file = csv.DictReader(file)
+    list_csv_file = list(csv_file)
+    for i in range(len(list_csv_file)):
+        if i == 0:
+            for key in list_csv_file[i].keys():
+                print(key, end='')
+            print('')
+        
+        for value in list_csv_file[i].values():
+            print(value, end='')
+        print('')
