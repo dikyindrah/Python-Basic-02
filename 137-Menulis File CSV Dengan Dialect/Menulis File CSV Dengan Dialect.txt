@@ -24,11 +24,11 @@ records = [['p001', 'kipas angin', '150000'],
            ['p002', 'tv', '2500000'],
            ['p003', 'lampu', '15000']]
 
+# Mendefinisikan dialek dengan fungsi register_dialek()
+csv.register_dialect('my_dialect', delimiter='|', quoting=csv.QUOTE_ALL)
+
 with open('myfile.csv', mode='w', newline='\n') as file:
-    # Mendefinisikan dialek dengan fungsi register_dialect()
-    csv.register_dialect('my_dialect', delimiter='|', quoting=csv.QUOTE_ALL)
-    
-    # Membuat nama dialek sebagai nilai argumen pada 
+    # Menggunakan nama dialek sebagai nilai argumen pada 
     # parameter fungsi writer()
     write = csv.writer(file, dialect='my_dialect')
     
