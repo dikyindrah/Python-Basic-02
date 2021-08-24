@@ -1,0 +1,107 @@
+Catatan:
+
+Membaca File CSV Dengan Delimiter Khusus
+
+Secara default, koma digunakan sebagai pembatas dalam 
+file CSV. Namun, beberapa file CSV dapat menggunakan 
+pembatas selain koma. Salah satu contoh yang populer 
+adalah pembatas dengan tanda pipa (|).
+
+Misalkan kita ingin menggunakan tanda pipa (|) sebagai 
+pembatas dalam sebuah file .csv. Untuk membaca file ini, 
+kita dapat melewatkan nilai argumen ke parameter delimiter 
+ke fungsi csv.reader().
+
+Contoh:
+
+import csv
+
+with open('myfile.csv', mode='r', newline='\n') as file:
+    read = csv.reader(file, delimiter='|')
+    for r in read:
+        print(r)
+
+
+Output:
+
+['no', ' nama', ' profesi ']
+['1', ' diky indra h', ' programmer']
+['2', ' ardi wibowo', ' it support']
+['3', ' tubagus bagas', ' manager']
+
+
+Beberapa file CSV dapat memiliki karakter spasi 
+setelah pembatas. Saat kita menggunakan csv.reader() 
+fungsi default untuk membaca file CSV ini, kita juga 
+akan mendapatkan spasi di output.
+
+Untuk menghapus spasi awal ini, kita perlu memberikan 
+nilai argumen ke parameter tambahan pada fungsi
+csv.reader() yang disebut skipinitialspace. 
+
+Contoh:
+
+import csv
+
+with open('myfile.csv', mode='r', newline='\n') as file:
+    read = csv.reader(file, delimiter='|', skipinitialspace=True)
+    for r in read:
+        print(r)
+
+Output:
+
+['no', 'nama', 'profesi ']
+['1', 'diky indra h', 'programmer']
+['2', 'ardi wibowo', 'it support']
+['3', 'tubagus bagas', 'manager']
+
+
+Kita juga bisa memberikan tanda kutip pada setiap 
+data yang dibaca. Kita hanya perlu memberikan
+nilai argumen pada parameter quoting di fungsi 
+csv.reader(). Mislakan kita memiliki file .csv
+dengan data seperti ini.
+
+"no"| "nama"| "profesi"
+1| diky indra h| programmer
+2| ardi wibowo| it support
+3| tubagus bagas| manager
+
+Jika kita lihat beberapa data pada file .csv memiliki
+tanda kutip. Dengan memberikan nilai argumen pada 
+parameter quoting di fungsi csv.reader(), kita bisa
+menampilkan seluruh data dengan tanda kutip yang sama. 
+
+Contoh:
+
+with open('myfile.csv', mode='r', newline='\n') as file:
+    read = csv.reader(file, delimiter='|', skipinitialspace=True, quoting=csv.QUOTE_ALL)
+    for r in read:
+        print(r)
+
+
+Output:
+
+['no', 'nama', 'profesi']
+['1', 'diky indra h', 'programmer']
+['2', 'ardi wibowo', 'it support']
+['3', 'tubagus bagas', 'manager']
+
+
+Pada kode program diatas, kita memberikan konstanta 
+quoting=csv.QUOTE_ALL sebagai nilai argumen pada parameter
+quoting. Konstanta csv.QUOTE_ALL - memberikan tanda kutip 
+pada seluruh data yang ada. Ada 3 konstanta standar lainnya 
+yang dapat kita berikan ke quoting parameter: 
+
+[-] csv.QUOTE_MINIMAL - memberikan tanda kutip pada karaker
+                        khusus.
+[-] csv.QUOTE_NONE - tidak memberikan tanda kutip pada data
+                     (ini adalah nilai default).
+[-] csv.QUOTE_NONNUMERIC - akan memberikan tanda kutip pada 
+                           seluruh data non-numerik
+
+
+Referensi:
+
+1.  https://www.programiz.com/python-programming/reading-csv-files
