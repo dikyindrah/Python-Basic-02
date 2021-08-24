@@ -1,0 +1,49 @@
+Catatan:
+
+Membaca File CSV Dengan Dialect
+
+Pada modul csv, Dialect digunakan untuk membantu 
+dalam mengelompokkan banyak pola pemformatan 
+tertentu seperti delimiter, skipinitialspace, quoting, 
+escapechar dan parameter opsional lainya menjadi satu 
+nama, yang nantinya bisa kita gunakan sebagai nilai 
+argumen pada parameter fungsi writer() atau reader().
+
+Untuk membuat Dialect kita bisa menggunakan fungsi 
+register_dialect() dengan mendefinisikan nama dialect
+kemudain pola yang akan digunakan. Setelah dialect
+dibuat, selanjutnya kita bisa menggunan nama dialect
+tersebut.
+
+Contoh:
+
+import csv
+
+# Mendefinisikan dialek dengan fungsi register_dialek()
+csv.register_dialect('my_dialect', delimiter='|', skipinitialspace=True, quoting=csv.QUOTE_ALL)
+
+with open('myfile.csv', mode='r', newline='\n') as file:
+    # Menggunakan nama dialek sebagai nilai argumen pada 
+    # parameter fungsi reader()
+    read = csv.reader(file, dialect='my_dialect')
+    for r in read:
+        print(r)
+
+
+Output:
+
+['id', 'produk', 'harga']
+['p001', 'kipas angin', '150000']
+['p002', 'tv', '2500000']
+['p003', 'lampu', '15000']
+
+Keuntungan menggunakan dialect adalah membuat program 
+lebih modular. Perhatikan bahwa kita dapat menggunakan 
+kembali dialect tersebut untuk membuka file lain tanpa 
+harus menentukan ulang format CSV.
+
+
+Referensi:
+
+1.  https://www.programiz.com/python-programming/writing-csv-files
+2.  https://thepythonguru.com/python-how-to-read-and-write-csv-files/
