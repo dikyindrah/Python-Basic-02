@@ -11,14 +11,14 @@ records = [['1','guido van rossum','python'],
 #     write.writerow(fields)
 #     write.writerows(records)
 
-# # Menulis file csv menggunakan tanda kutip
-# with open('D:/Programming/web/Python/Python-Basic-02/136-Menulis File CSV Dengan Delimiter Khusus/myfile.csv', mode='w', newline='\n') as file:
-#     write = csv.writer(file, delimiter=',', quoting=csv.QUOTE_NONNUMERIC)
-#     write.writerow(fields)
-#     write.writerows(records)
-
-# Menulis file csv menggunakan tanda kutip dengan karakter khusus
+# Menulis file csv menggunakan tanda kutip
 with open('D:/Programming/web/Python/Python-Basic-02/136-Menulis File CSV Dengan Delimiter Khusus/myfile.csv', mode='w', newline='\n') as file:
-    write = csv.writer(file, delimiter=';', quoting=csv.QUOTE_ALL, quotechar='*')
+    write = csv.writer(file, delimiter=',', quoting=csv.QUOTE_ALL)
     write.writerow(fields)
     write.writerows(records)
+
+# # Menulis file csv menggunakan tanda kutip dengan karakter khusus
+# with open('D:/Programming/web/Python/Python-Basic-02/136-Menulis File CSV Dengan Delimiter Khusus/myfile.csv', mode='w', newline='\n') as file:
+#     write = csv.writer(file, delimiter=';', quoting=csv.QUOTE_ALL, quotechar='*')
+#     write.writerow(fields)
+#     write.writerows(records)

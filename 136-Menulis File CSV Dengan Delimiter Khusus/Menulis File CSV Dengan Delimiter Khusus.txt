@@ -49,7 +49,7 @@ records = [['1','guido van rossum','python'],
            ['3','linus torvalds','linux kernel']]
 
 with open('myfile.csv', mode='w', newline='\n') as file:
-    write = csv.writer(file, delimiter=',', quoting=csv.QUOTE_NONNUMERIC)
+    write = csv.writer(file, delimiter=',', quoting=csv.QUOTE_ALL)
     write.writerow(fields)
     write.writerows(records)
 
