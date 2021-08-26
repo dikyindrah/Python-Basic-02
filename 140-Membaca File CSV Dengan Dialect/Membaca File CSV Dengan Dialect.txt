@@ -42,6 +42,69 @@ lebih modular. Perhatikan bahwa kita dapat menggunakan
 kembali dialect tersebut untuk membuka file lain tanpa 
 harus menentukan ulang format CSV.
 
+Cara yang kita gunakan sebelumnya adalah cara untuk 
+mengetahui pemformatan yang digunakan pada file csv 
+secara manual. Jadi jika kita ingin menampilkan file 
+.csv dengan dialect maka kita harus mengetahui 
+pemformatan apa yang digunakan pada file .csv tersebut. 
+Namun kita juga bisa mengetahui pemformatan apa yang 
+digunakan pada file .csv tanpa harus melihat terlebih 
+dahulu, untuk melakukan ini kita bisa menggunakan kelas 
+csv.Sniffer().
+
+csv.Sniffer()
+
+csv.Sniffer() digunakan untuk menyimpulkan format file 
+CSV. Kelas ini menawarkan dua metode:
+
+[-] sniff(sample, delimiters=None) - Fungsi ini menganalisis 
+    sampel teks CSV yang diberikan dan mengembalikan Dialect 
+    subkelas yang berisi semua parameter yang disimpulkan.
+
+Parameter dialect opsional dapat diteruskan sebagai string 
+yang berisi kemungkinan karakter dialect yang valid.
+
+[-] has_header(sample) - Fungsi ini mengembalikan True atau 
+    False berdasarkan analisis apakah CSV sampel memiliki 
+    baris pertama sebagai header kolom.
+
+Misal kita memiliki file .csv dengan data seperti ini.
+
+"id"| "produk"| "harga"
+"p001"| "kipas angin"| "150000"
+"p002"| "tv"| "2500000"
+"p003"| "lampu"| "15000"
+
+dengan csv.Sniffer() kita bisa mengetahui secara 
+otomatis pemformatan apa yang digunakan pada file 
+.csv tersebut.
+
+Contoh:
+
+with open('myfile.csv', mode='r', newline='\n') as file:
+    # Mengubah objek file ke string sebanyak 64 karakter
+    sample = file.read(64)
+
+    # Mendefinisikan header atau field dari file .csv
+    has_header = csv.Sniffer().has_header(sample)
+    print(has_header)
+
+    # Mengetahui pemformatan yang digunakan pada file .csv
+    deduced_dialect = csv.Sniffer().sniff(sample)
+
+with open('myfile.csv', mode='r', newline='\n') as file:
+    read = csv.reader(file, dialect=deduced_dialect)
+    for row in read:
+        print(row)
+
+Output:
+
+True
+['id', 'produk', 'harga']
+['p001', 'kipas angin', '150000']
+['p002', 'tv', '2500000']
+['p003', 'lampu', '15000']
+
 
 Referensi:
 
