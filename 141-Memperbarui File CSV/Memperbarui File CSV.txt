@@ -1,0 +1,144 @@
+Catatan:
+
+Memperbarui File CSV
+
+Kita bisa mengubah atau memperbarui data pada file csv,
+namun karena modul csv tidak menyediakan fungsi yang 
+bisa kita gunakan untuk melakukan ini maka kita harus 
+melakukanya dengan menulis kode program kita sendiri.
+
+Salah satu cara yang bisa kita gunakan untuk mengubah
+atau memperbarui data pada file csv adalah dengan
+membaca data dari file csv dan memindahkan data ke 
+tempat penyimpanan sementara, kemudain kita mengubah 
+data dari tempat penyimpanan sementara, setelah itu 
+kita tulis file csv dengan data yang ada di tempat 
+penyimpanan sementara. Misal kita memiliki file csv 
+dengan data sebagai berikut:
+
+no,nama,profesi
+1,ucup surucup,it support
+2,otong surotong,supervisor
+3,tatang sutarman,manager
+
+Dalam kasus ini, kita akan mencoba mengubah data 
+no 2.
+
+Contoh:
+
+import csv
+
+file_path = 'D:/Programming/web/Python/Python-Basic-02/141-Memperbarui File CSV/myfile.csv'
+temp_file = []
+fieldnames = ['no','nama','profesi']
+
+# # Mengubah data pada baris
+# Membaca dan menyalin data pada file ke variable list
+with open(file_path, mode='r', newline='\n') as my_file_csv:
+    file = csv.DictReader(my_file_csv)
+    for data in file: temp_file.append(data)
+
+# Menampilkan data dari variable list
+print('\nno \t nama \t\t profesi')
+for data in temp_file: print(f"{data['no']} \t {data['nama']} \t {data['profesi']}")
+
+# Mengubah data pada variable list
+no = '2'
+print(f"\nmengubah data no.{no}")
+for i in range(len(temp_file)):
+    if temp_file[i]['no'] == '2':
+        nama = str(input('nama \t: '))
+        profesi = str(input('profesi : '))
+        temp_file[i]['nama'], temp_file[i]['profesi'] = nama, profesi
+
+# Menulis data dari variable list ke file
+with open(file_path, mode='w', newline='\n') as my_file_csv:
+    file = csv.DictWriter(my_file_csv, fieldnames)
+    file.writeheader()
+    file.writerows(temp_file)
+
+
+Output:
+
+no,nama,profesi
+1,ucup surucup,it support
+2,diky indra h,programmer
+3,tatang sutarman,manager
+
+
+Pada kode program tersebut, kita mengubah atau 
+memperbarui data pada baris, selanjutnya kita akan
+mencoba mengubah atau memperbarui data pada kolom
+Misal kita memiliki file csv dengan data sebagai 
+berikut:
+
+no,nama,profesi
+1,ucup surucup,it support
+2,diky indra h,programmer
+3,tatang sutarman,manager
+
+Dalam kasus ini, kita akan mencoba mengubah data 
+pada kolom nama.
+
+Contoh:
+
+import csv 
+
+file_path = 'D:/Programming/web/Python/Python-Basic-02/141-Memperbarui File CSV/myfile2.csv'
+temp_file = []
+fieldnames = ['no','nama','profesi']
+
+# # Mengubah data pada kolom
+# Membaca dan menyalin data pada file ke variable list
+with open(file_path, mode='r', newline='\n') as my_file_csv:
+    file = csv.DictReader(my_file_csv)
+    for data in file: temp_file.append(data)
+
+# Menampilkan data dari variable list
+print('\nno \t nama \t\t profesi')
+for data in temp_file: print(f"{data['no']} \t {data['nama']} \t {data['profesi']}")
+
+# Mengubah data pada variable list
+col = 'nama'
+no = '1'
+nama = 'diky indra h'
+profesi = 'manager'
+print(f"\nmengubah seluruh data pada kolom {col}")
+for i in range(len(temp_file)):
+    if temp_file[i][col]: 
+        if col == 'no': temp_file[i][col] = no
+        elif col == 'nama': temp_file[i][col] = nama
+        elif col == 'profesi': temp_file[i][col] = profesi
+        else: print('data tidak diketahui.')
+
+# Menulis data dari variable list ke file
+with open(file_path, mode='w', newline='\n') as my_file_csv:
+    file = csv.DictWriter(my_file_csv, fieldnames)
+    file.writeheader()
+    file.writerows(temp_file)
+
+
+Output:
+
+no,nama,profesi
+1,diky indra h,it support
+2,diky indra h,programmer
+3,diky indra h,manager
+
+
+Referensi:
+
+1.  
+
+
+
+        
+
+
+
+
+
+Referensi:
+
+1.  https://www.geeksforgeeks.org/update-column-value-of-csv-in-python/
+2.  https://www.petanikode.com/python-csv-crud/
