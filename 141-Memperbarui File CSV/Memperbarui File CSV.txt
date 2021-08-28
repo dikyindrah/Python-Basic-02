@@ -4,8 +4,8 @@ Memperbarui File CSV
 
 Kita bisa mengubah atau memperbarui data pada file csv,
 namun karena modul csv tidak menyediakan fungsi yang 
-bisa kita gunakan untuk melakukan ini maka kita harus 
-melakukanya dengan menulis kode program kita sendiri.
+bisa kita gunakan. Untuk melakukan ini maka kita harus 
+menulis kode program kita sendiri.
 
 Salah satu cara yang bisa kita gunakan untuk mengubah
 atau memperbarui data pada file csv adalah dengan
