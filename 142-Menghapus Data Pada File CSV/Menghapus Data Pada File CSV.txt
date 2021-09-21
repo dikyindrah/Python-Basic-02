@@ -1,0 +1,132 @@
+Catatan:
+
+Menghapus Data Pada File CSV
+
+Kita bisa menghapus data pada file CSV, namun karena 
+modul csv tidak menyediakan fungsi yang bisa kita 
+gunakan. Untuk melakukan ini maka kita harus menulis 
+kode program kita sendiri. 
+
+Untuk menghapus data kita bisa menghapus salah satu 
+atau beberapa data sekaligus. Misal kita memiliki 
+file .CSV dengan data berikut.
+
+no,nama,profesi
+1,diky indra h,web developer
+2,ardi wibowo,it support
+3,tubagus m bagas,manager
+4,rohit trio p,manager
+5,dian budi,manager
+
+
+Menghapus Salah Satu Data 
+
+Untuk menghapus salah satu data pada file .CSV kita 
+bisa menggunakan perulangan for dan kondisi if, dimana
+perulangan kita gunakan untuk mengulang data yang ada 
+didalam file .CSV dan kondisi if kita gunakan untuk 
+mencari data yang ingin kita hapus.
+
+Contoh:
+
+import csv
+
+my_file_path = 'D:/Programming/web/Python/Python-Basic-02/142-Menghapus Data Pada File CSV/myfile.csv'
+tmp_file = []
+fieldnames = ['no','nama','profesi']
+
+with open(my_file_path, mode='r', newline='\n') as my_file_csv:
+    file = csv.DictReader(my_file_csv)
+    for data in file: tmp_file.append(data)
+
+print(f"{'nomor'},{'nama'},{'profesi'}")
+for data in tmp_file:
+    print(f"{data['no']},{data['nama']},{data['profesi']}")
+
+# Menghapus satu data
+i = 0
+for data in tmp_file:
+    if data['no'] == '2':
+        tmp_file.remove(tmp_file[i])
+    i = i + 1
+
+with open(my_file_path, mode='w', newline='\n') as my_file_csv:
+    file = csv.DictWriter(my_file_csv, fieldnames)
+    file.writeheader()
+    file.writerows(tmp_file)
+
+Output:
+
+no,nama,profesi
+1,diky indra h,web developer
+3,tubagus m bagas,manager
+4,rohit trio p,manager
+5,dian budi,manager
+
+
+Mengahpus Beberapa Data Sekaligus
+
+Untuk menghapus beberapa data sekaligus kita perlu 
+mengetahui berapa banyak data yang ingin kita hapus
+pada file .CSV. Disini kita membuat dua pernyataan,
+pernyataan pertama berisi sebuah perulangan for 
+dengan sebuah kondisi if, ini kita gunakan untuk
+menghitung banyak data yang akan di hapus. Kemudian
+pernyataan kedua berisi dua perulangan for dengan 
+sebuah kondisi if, perulangan pertama digunakan 
+untuk mengulang data sebanyak data yang ingin dihapus,
+perulangan kedua untuk mengulang data yang ada pada 
+file .CSV, dan kondisi if kita gunakan untuk 
+mencari data yang ingin kita hapus.
+
+Contoh:
+
+import csv
+
+my_file_path = 'D:/Programming/web/Python/Python-Basic-02/142-Menghapus Data Pada File CSV/myfile.csv'
+tmp_file = []
+fieldnames = ['no','nama','profesi']
+
+with open(my_file_path, mode='r', newline='\n') as my_file_csv:
+    file = csv.DictReader(my_file_csv)
+    for data in file: tmp_file.append(data)
+
+print(f"{'nomor'},{'nama'},{'profesi'}")
+for data in tmp_file:
+    print(f"{data['no']},{data['nama']},{data['profesi']}")
+
+# Menghapus beberapa data
+delete_data = 'manager'
+total_data = 0
+index = 0
+
+for data in tmp_file:
+    if data['profesi'] == delete_data:
+        total_data = total_data + 1
+
+for i in range(total_data+1):
+    for data in tmp_file:
+        if data['profesi'] == delete_data:
+            tmp_file.remove(tmp_file[index])
+        index = index + 1
+    index = 0
+
+print(f"{'nomor'},{'nama'},{'profesi'}")
+for data in tmp_file:
+    print(f"{data['no']},{data['nama']},{data['profesi']}")
+
+with open(my_file_path, mode='w', newline='\n') as my_file_csv:
+    file = csv.DictWriter(my_file_csv, fieldnames)
+    file.writeheader()
+    file.writerows(tmp_file)
+
+Output:
+
+no,nama,profesi
+1,diky indra h,web developer
+2,ardi wibowo,it support
+
+
+Referensi:
+
+1.  https://www.petanikode.com/python-csv-crud/
