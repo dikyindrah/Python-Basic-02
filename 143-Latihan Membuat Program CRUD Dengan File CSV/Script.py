@@ -9,8 +9,8 @@ def show_menu():
     print('[1] Lihat Daftar Kontak')
     print('[2] Tambah Kontak')
     print('[3] Ubah Kontak')
-    print('[5] Hapus Kontak')
-    print('[6] Cari Kontak')
+    print('[4] Hapus Kontak')
+    print('[5] Cari Kontak')
     print('[0] Keluar')
 
     selected_menu = str(input('\nPilih menu : '))
@@ -21,13 +21,11 @@ def show_menu():
     elif selected_menu == '3':
         update_contact()
     elif selected_menu == '4':
-        pass
+        delete_contact()
     elif selected_menu == '5':
-        pass
-    elif selected_menu == '6':
-        pass
+        search_contact()
     elif selected_menu == '0':
-        pass
+        close_menu()
     else:
         print('\nMenu yang anda pilih tidak diketahui.')
         back_to_menu()
@@ -114,7 +112,53 @@ def update_contact():
     back_to_menu()
 
 def delete_contact():
-    pass
+    clear_screen()
+    all_contact = add_contact_to_temporary()
 
+    show_contact_from_temporary()
+    No = str(input('\nPilih nomor data yang ingin anda hapus : '))
+    i = 0
+    for data in all_contact:
+        if data['No'] == No:
+            all_contact.remove(all_contact[i])
+        i = i + 1
+    
+    with open(my_file_path, mode='w', encoding='UTF-8', newline='\n') as my_file_csv:
+        fieldnames = ['No','Nama','Kontak']
+        file = csv.DictWriter(my_file_csv, fieldnames=fieldnames)
+        file.writeheader()
+        file.writerows(all_contact)
+    
+    back_to_menu()
 
-show_menu()
+def search_contact():
+    clear_screen()
+    all_contact = add_contact_to_temporary()
+
+    show_contact_from_temporary()
+
+    search_data = str(input('\nCari data : '))
+    total_data = 0
+    index_data = []
+    for i in range(len(all_contact)):
+        if (all_contact[i]['No'] == search_data 
+        or all_contact[i]['Nama'] == search_data 
+        or all_contact[i]['Kontak'] == search_data):
+            total_data = total_data + 1
+            index_data.append(i)
+
+    if total_data != 0:
+        print(f"\nTotal data yang ditemukan {total_data}\n")
+        field = list(all_contact[0].keys())
+        print(f"{field[0]}\t{field[1]}\t\t{field[2]}")
+        for i in range(len(index_data)):
+            index = int(index_data[i])
+            print(f"{all_contact[index]['No']}\t{all_contact[index]['Nama']}\t{all_contact[index]['Kontak']}")
+    else:
+        print('Data tidak ditemukan!')
+
+def close_menu():
+    os.system('exit')
+
+if __name__ == '__main__':
+    show_menu()
