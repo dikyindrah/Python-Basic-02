@@ -13,7 +13,7 @@ def show_menu():
     print('[5] Cari Kontak')
     print('[0] Keluar')
 
-    selected_menu = str(input('\nPilih menu : '))
+    selected_menu = str(input('\nInput nomor untuk memilih menu => '))
     if selected_menu == '1':
         show_contact()
     elif selected_menu == '2':
@@ -52,35 +52,50 @@ def add_contact_to_temporary():
 
 def show_contact_from_temporary():
     all_contact = add_contact_to_temporary()
-    field = list(all_contact[0].keys())
-    
-    print(f"{field[0]}\t{field[1]}\t\t{field[2]}")
-    for contact in all_contact:
-        print(f"{contact['No']}\t{contact['Nama']}\t{contact['Kontak']}")
+
+    if not all_contact:
+        print('Belum ada kontak.')
+    else:
+        field = list(all_contact[0].keys())
+        print(f"{field[0]}\t{field[1]}\t\t\t{field[2]}")
+        for contact in all_contact:
+            print(f"{contact['No']}\t{contact['Nama']}\t\t{contact['Kontak']}")
 
 def show_contact():
     clear_screen()
 
-    print(f"{'='*5}Lihat Daftar Kontak{'='*5}")
+    print(f"{'='*10}Lihat Daftar Kontak{'='*10}")
+    all_contact = add_contact_to_temporary()
+    total_contact = len(all_contact)
+    print(f"Total kontak : {total_contact}\n")
     show_contact_from_temporary()
 
     back_to_menu()
 
 def add_contact():
     clear_screen()
-    print(f"{'='*5}Tambah Kontak{'='*5}")
-    with open(my_file_path, mode='a', encoding='UTF-8', newline='\n') as my_file_csv:
-        fieldnames = ['No','Nama','Kontak']
-        file = csv.DictWriter(my_file_csv, fieldnames=fieldnames)
-        
-        No = str(input('No \t: '))
-        Nama = str(input('Nama \t: '))
-        Kontak = str(input('Kontak \t: '))
 
-        file.writerow({'No':No,'Nama':Nama,'Kontak':Kontak})
-        print('\nKontak berhasil ditambahkan.')
+    print(f"{'='*10}Tambah Kontak{'='*10}")
+    all_contact = add_contact_to_temporary()
+    No = len(all_contact) + 1
+    Nama = str(input('Nama \t: '))
+    Kontak = str(input('Kontak \t: '))
     
-    back_to_menu()
+    add = str(input('\nTambahkan ke daftar kontak? [y/t]: '))
+
+    if add.lower() == 'y':
+        with open(my_file_path, mode='a', encoding='UTF-8', newline='\n') as my_file_csv:
+            fieldnames = ['No','Nama','Kontak']
+            file = csv.DictWriter(my_file_csv, fieldnames=fieldnames)
+            file.writerow({'No':No,'Nama':Nama,'Kontak':Kontak})
+            print('\nKontak telah ditambahkan.')
+        back_to_menu()
+    elif add.lower() == 't':
+        print('\nKontak tidak ditambahkan.')
+        back_to_menu()
+    else:
+        print('\nPerintah tidak diketahui!')
+        back_to_menu()
 
 def update_contact():
     clear_screen()
@@ -147,8 +162,9 @@ def search_contact():
             total_data = total_data + 1
             index_data.append(i)
 
+    clear_screen()
     if total_data != 0:
-        print(f"\nTotal data yang ditemukan {total_data}\n")
+        print(f"Total data yang ditemukan {total_data}\n")
         field = list(all_contact[0].keys())
         print(f"{field[0]}\t{field[1]}\t\t{field[2]}")
         for i in range(len(index_data)):
@@ -156,6 +172,8 @@ def search_contact():
             print(f"{all_contact[index]['No']}\t{all_contact[index]['Nama']}\t{all_contact[index]['Kontak']}")
     else:
         print('Data tidak ditemukan!')
+    
+    back_to_menu()
 
 def close_menu():
     os.system('exit')
