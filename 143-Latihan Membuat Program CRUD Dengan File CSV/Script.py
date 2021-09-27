@@ -27,7 +27,7 @@ def show_menu():
     elif selected_menu == '0':
         close_menu()
     else:
-        print('\nMenu yang anda pilih tidak diketahui.')
+        print('\nPerintah tidak diketahui.')
         back_to_menu()
 
 def clear_screen():
@@ -102,7 +102,11 @@ def update_contact():
     print(f"{'='*10}Ubah Kontak{'='*10}")
     show_contact_from_temporary()
 
-    no = int(input('\nPilih \'No\' untuk mengubah kontak: '))
+    try:
+        no = int(input('\nPilih \'No\' untuk mengubah kontak: '))
+    except:
+        no = 0
+
     data_found = False
     for i in range(len(tmp_contact)):
         if i == no-1:
@@ -127,7 +131,7 @@ def update_contact():
             file.writeheader()
             file.writerows(tmp_contact)
     else:
-        print('Kontak tidak ditemukan.')
+        print('\nKontak tidak ditemukan.')
 
     back_to_menu()
 
@@ -137,12 +141,18 @@ def delete_contact():
     
     print(f"{'='*10}Hapus Kontak{'='*10}")    
     show_contact_from_temporary()
-    no = int(input('\nPilih \'No\' untuk menghapus kontak: '))
+
+    try:
+        no = int(input('\nPilih \'No\' untuk menghapus kontak: '))
+    except:
+        no = 0
+
     data_found = False
     for i in range(len(tmp_contact)):
         if i == no-1:
             data_found = True
             break;
+
     if data_found == True:
         tmp_contact.remove(tmp_contact[no-1])
         with open(my_file_path, mode='w', encoding='UTF-8', newline='\n') as my_file_csv:
@@ -170,7 +180,12 @@ def search_contact():
         clear_screen()
         print(f"{'='*10}Cari Kontak{'='*10}")
         show_contact_from_temporary()
-        no = int(input('\nPilih \'No\' untuk mencari kontak: '))
+
+        try:
+            no = int(input('\nPilih \'No\' untuk mencari kontak: '))
+        except:
+            no = 0
+        
         kontak_found = False
         for i in range(len(tmp_contact)):
             if i == no-1:
