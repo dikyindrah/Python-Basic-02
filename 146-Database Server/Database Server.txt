@@ -1,0 +1,33 @@
+Catatan:
+
+Database Server
+
+Database Server adalah sistem yang menyediakan
+layanan untuk mengakses dan mengelola database.
+Fungsi dari database server adalah sebagai
+perantara untuk menghubungkan aplikasi dengan 
+database, sehingga aplikasi tersebut bisa 
+mengakses dan menggunakan data yang tersimpan
+didalam database.
+
+Aplikasi yang menggunakan database server 
+biasanaya aplikasi yang memiliki sistem 
+dengan model "client-sever". Jadi aplikasi
+akan bertindak sebagai "client" yang meminta
+layanan dan database server akan bertindak
+server yang akan menerima permintaan dan 
+memberikan layanan. Layanan yang diminta dan
+diberikan disini adalah data yang tersimpan
+didalam database.
+
+Database server biasanaya sudah terinstal 
+ketika kita menginsal DBMS.
+
+Contoh DBMS yang paling umum digunakan adalah:
+
+1. MySQL
+2. MariaDB
+3. PostgreSQL
+4. Oracle
+5. Microsoft SQL Server
+6. Microsoft Accses
