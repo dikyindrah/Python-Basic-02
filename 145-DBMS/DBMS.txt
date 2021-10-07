@@ -1,0 +1,21 @@
+Catatan:
+
+DBMS (Database Management System)
+
+DBMS adalah sistem yang digunakan untuk membangun
+dan mengelola database. Sistem ini berupa perangkat
+lunak yang diinstal dan digunakan pada komputer
+
+Contoh DBMS yang paling umum digunakan adalah:
+
+1. MySQL
+2. MariaDB
+3. PostgreSQL
+4. SQLite
+5. Oracle
+6. Microsoft SQL Server
+7. Microsoft Accses
+
+Referensi:
+
+1.  
