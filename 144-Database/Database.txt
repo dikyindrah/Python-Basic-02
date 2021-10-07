@@ -1,0 +1,42 @@
+Catatan:
+
+Database 
+
+Database adalah kumpulan informasi terorganisir 
+yang umumnya disimpan, diakses, dan dikelola 
+secara elektronik melalui sistem komputer.
+
+Database sendiri memiliki berbagai macam jenis,
+yaitu:
+
+Jenis database berdasarkan model data:
+1. Hierarchial Model
+2. Network Model
+3. Relational Model
+4. NoSQL or Non-Relational Model
+5. Object Oriented Model
+
+Jenis database berdasarkan lokasi penyimpanan
+data:
+1. Centralized Database
+2. Distributed Database
+
+Jenis database berdasarkan tujuan:
+1. Open-Source Database
+2. Comercial Database
+3. End-User Database
+
+Jenis database berdasarkan kegunaan:
+1. Operational Database
+2. Analytical Database
+3. Data Warehouse
+
+
+Referensi:
+
+1.  https://techterms.com/definition/database
+2.  https://id.wikipedia.org/wiki/Pangkalan_data
+3.  https://blog.hacktiv8.com/pengertian-dan-fungsi-
+    database-dalam-pemrograman/
+4.  https://www.c-sharpcorner.com/article/what-are-object-
+    oriented-databases-and-their-advantages2/
