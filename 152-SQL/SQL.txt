@@ -3,26 +3,81 @@ Catatan:
 SQL
 
 SQL atau Structured Query Language adalah bahasa 
-pemrograman yang digunakan untuk mengakses, 
-mengubah, dan memanipulasi data yang berbasis 
-relasional. 
+pemrograman atau perintah standar yang digunakan 
+untuk mengakses, mengubah, dan memanipulasi 
+Relational Database. 
 
-SQL memiliki 3 jenis perintah yang bisa digunakan 
-mengelola Database Relational, yaitu:
+Perintah pada SQL diklasifikasikan menjadi tiga
+bagian, yaitu:
 
 1. Data Definition Language (DDL)
 
-Data Definition Languange (DDL) adalah perintah 
-yang digunakan untuk mendefinisikan data seperti 
-membuat tabel database baru, mengubah dataset, dan 
-menghapus data.
+Merupakan kumpulan perintah yang berfungsi untuk 
+mendefinisikan database, struktur tabel, indeks dan
+objek-objek lain dalam database. 
 
+Contoh perintah:
+
+[-] CREATE DATABASE
+[-] CREATE TABLE
+[-] CREATE VIEW
+[-] CREATE TRIGGER
+[-] CREATE PROCEDURE
+[-] CREATE FUNCTION
+[-] CREATE INDEX
+
+[-] RENAME TABLE
+
+[-] ALTER DATABASE
+[-] ALTER FUNCTION
+[-] ALTER PROCEDURE
+[-] ALTER TABLE
+[-] ALTER VIEW
+
+[-] DROP DATABASE
+[-] DROP FUNCTION
+[-] DROP INDEX
+[-] DROP PROCEDURE
+[-] DROP TABLE
+[-] DROP TRIGGER
+[-] DROP VIEW
 
 
 2. Data Manipulation Language (DML)
+
+Merupakan kumpulan perintah yang digunakan untuk 
+melakukan manipulasi data di dalam tabel (menambah, 
+mengubah dan menghapus data). 
+
+Contoh perintah:
+
+[-] SELECT
+[-] INSERT
+[-] UPDATE
+[-] DELETE
+
+
 3. Data Control Language (DCL)
+
+Merupakan kumpulan perintah yang digunakan untuk 
+mengontrol data, misalnya untuk menyimpan atau 
+membatalkan transaksi, manajemen user dan hak 
+akses dan sebagainya.
+
+[-] GRANT SELECT
+[-] GRANT UPDATE
+[-] GRANT INSERT
+[-] GRANT DELETE
+
+[-] REVOKE SELECT
+[-] REVOKE DELETE
+[-] REVOKE INSERT
+[-] REVOKE UPDATE
+
 
 Referensi:
 
 1.  https://www.dewaweb.com/blog/sql-pengertian
     -fungsi-beserta-perintah-dasarnya/
+2.  https://www.konsepkoding.com/2020/07/
+    pengertian-penjelasan-ddl-dml-dcl.html
