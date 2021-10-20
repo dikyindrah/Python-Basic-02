@@ -4,7 +4,7 @@ DBMS (Database Management System)
 
 DBMS adalah sistem yang digunakan untuk membangun
 dan mengelola database. Sistem ini berupa perangkat
-lunak yang diinstal dan digunakan pada komputer
+lunak yang diinstal dan digunakan pada komputer.
 
 Contoh DBMS yang paling umum digunakan adalah:
 
