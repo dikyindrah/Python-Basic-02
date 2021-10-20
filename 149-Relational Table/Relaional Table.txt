@@ -1,0 +1,51 @@
+Catatan:
+
+Relational Tabel
+
+Relational Tabel atau relasi tabel adalah istilah 
+dalam Relational Database yang mendefinisikan 
+tentang bagaimana tabel dalam database bisa saling
+terhubung satu sama lain.
+
+Dalam Relational Database untuk dapat menghubungkan
+tabel, kita harus mendefinisikan Kunci Utama (Primary
+Key) dan Kunci Asing (Foreign Key) pada tabel. 
+
+[-] Kunci Utama (Primary Key) - Kunci utama pada tabel
+                                yang terdapat pada baris
+                                tertentu
+
+[-] Kunci Asing (Foreign Key) - Kunci lain pada table yang 
+                                mendefinisikan hubungan antar
+                                tabel
+
+Sederhananya Kunci Asing (Foreign Key) adalah Kunci 
+Utama (Primary Key) dari suatu tabel yang didefinisikan 
+sebagai Kunci Asing (Foreign Key) pada tabel lain, 
+agar dua atau lebih tabel bisa saling terhubung satu 
+sama lain.
+
+Sebagai contoh jika tabel A ingin terhubung dengan 
+Tabel B maka tabel A harus memiliki kunci utama 
+(Primary Key) dan tabel B harus memiliki kunci asing 
+(Foreign Key) dari tabel A. 
+
+Relasi tabel juga memiliki beberapa jenis, yaitu:
+
+[-] One to One - One to One adalah jenis relasi 
+                 tabel yang menghubungkan satu baris 
+                 tabel dengan satu baris pada tabel 
+                 lainnya.
+
+[-] One to Many - One to Many adalah jenis relasi tabel 
+                  yang menghubungkan satu baris tabel 
+                  dengan sejumlah baris pada tabel lainnya.
+
+[-] Many To Many - Many To Many adalah jenis relasi tabel 
+                   yang menghubungkan sejumlah baris tabel 
+                   dengan sejumlah baris pada tabel lainnya.
+
+
+Referensi:
+
+1.  https://aantamim.id/relasi-tabel-database/
