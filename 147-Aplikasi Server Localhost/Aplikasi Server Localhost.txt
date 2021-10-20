@@ -1,0 +1,40 @@
+Catatan:
+
+Aplikasi Server Localhost
+
+Aplikasi Server Localhost adalah perangkat lunak 
+yang bisa digunakan untuk membuat komputer kita
+menjadi server lokal. Jadi dengan menggunakan 
+aplikasi ini komputer kita akan menjadi server
+yang akan menerima dan memberikan layanan yang 
+kita minta tanpa harus terhubung dengan jaringan
+internet. 
+
+Aplikasi ini biasanya terdiri dari beberapa server 
+didalamnya dan paling umun terdiri dari database
+server dan web server. Fungsi database server dan 
+web server dari aplikai ini adalah:
+
+[-] Database Server - kita bisa menggunakan untuk mengakses 
+                      dan mengelola data yang tersimpan pada 
+                      database dari aplikasi yang kita buat.
+
+[-] Web Server - kita bisa menggunakan untuk memproses data 
+                 situs web dinamis yang kita buat dan 
+                 menampilkannya di browser tanpa harus 
+                 terhubung dengan jaringan internet.
+
+
+Aplikasi Server Localhost  yang paling umum digunakan
+adalah:
+
+1.	XAMPP
+2.	WAMP
+3.	MAMP
+4.	SAMP
+5.	LAMP
+
+
+Referensi:
+
+1.  https://www.niagahoster.co.id/blog/apa-itu-localhost/
