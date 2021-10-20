@@ -1,0 +1,28 @@
+Catatan:
+
+SQL
+
+SQL atau Structured Query Language adalah bahasa 
+pemrograman yang digunakan untuk mengakses, 
+mengubah, dan memanipulasi data yang berbasis 
+relasional. 
+
+SQL memiliki 3 jenis perintah yang bisa digunakan 
+mengelola Database Relational, yaitu:
+
+1. Data Definition Language (DDL)
+
+Data Definition Languange (DDL) adalah perintah 
+yang digunakan untuk mendefinisikan data seperti 
+membuat tabel database baru, mengubah dataset, dan 
+menghapus data.
+
+
+
+2. Data Manipulation Language (DML)
+3. Data Control Language (DCL)
+
+Referensi:
+
+1.  https://www.dewaweb.com/blog/sql-pengertian
+    -fungsi-beserta-perintah-dasarnya/
