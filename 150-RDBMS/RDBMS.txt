@@ -1,0 +1,12 @@
+Catatan:
+
+RDBMS
+
+RDBMS adalah sistem yang digunakan untuk membangun
+dan mengelola Relational Database. Contoh RDBMS
+yang umum digunakan adalah MySQL.
+
+Referensi:
+
+1.  https://id.wikipedia.org/wiki/Sistem_manajemen_
+    basis_data_relasional
