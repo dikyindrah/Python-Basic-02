@@ -1,0 +1,23 @@
+Catatan:
+
+Instalasi MySQL
+
+Untuk Windows:
+
+1.  Donwload Aplikasi Server Localhost "XAMPP"
+    melalui https://www.apachefriends.org/download.html
+2.  Install Aplikasi Server Localhost "XAMPP"
+3.  Buka aplikasi XAMPP Control Panel serta aktifkan 
+    MySQL Server dan Apache Web Server
+4.  Untuk membuka RDBMS, buka browser dan ketik URL
+    http://localhost/phpmyadmin/ atau http://127.0.0.1/phpmyadmin/
+
+
+Untuk Linux:
+
+-
+
+
+Referensi:
+
+1.  https://www.niagahoster.co.id/blog/mysql-adalah/?amp#
