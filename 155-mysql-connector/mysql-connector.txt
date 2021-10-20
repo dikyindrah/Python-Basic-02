@@ -1,0 +1,20 @@
+Catatan:
+
+mysql-connector
+
+mysql-connector adalah library python dari MySQL 
+yang menyediakan database driver dan sejumlah 
+keperluan untuk berinteraksi dengan database.
+
+Untuk menginstal mysql-connector pada python kita 
+bisa menggunakan manajemen paket PIP yang ada pada 
+pyhton, Kita hanya perlu memberikan perintah
+'pip install mysql-connector-python' pada command
+prompt atau terminal.
+
+
+Referensi:
+
+1.  https://realpython.com/python-mysql/
+2.  https://pynative.com/python-mysql-database-
+    connection/
