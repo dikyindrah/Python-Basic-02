@@ -1,0 +1,34 @@
+Catatan:
+
+MySQL
+
+MySQL adalah Relational Database Managemen 
+System (RDBMS) atau Perangkat Lunak yang 
+digunakan untuk mengelola Relational Database 
+dengan menggunakan Structured Query Language 
+(SQL). 
+
+Kelebihan & Kekurangan MySQL, yaitu:
+
+Kelebiah:
+
+[-] Mendukung integerasi dengan bahasa permograman
+    lain
+[-] Ringan dan tidak membutuhkan RAM besar
+[-] Mendukung multiuser
+[-] Open Source
+[-] Mudah digunakan
+[-] Struktur tabel lebih fleksibel
+[-] Tipe data yang bervariasi
+[-] Keamanan yang terjamin
+
+Kekurangan:
+
+[-] Kurang cocok untuk aplikasi game dan mobile
+[-] Sulit mengelola database yang besar
+[-] Technical support yang kurang bagus
+
+
+Referensi:
+
+1. https://www.niagahoster.co.id/blog/mysql-adalah/?amp#
