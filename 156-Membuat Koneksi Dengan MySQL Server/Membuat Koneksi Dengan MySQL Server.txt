@@ -1,0 +1,52 @@
+Catatan:
+
+Membuat Koneksi Dengan MySQL Server
+
+MySQL adalah sistem manajemen database berbasis 
+server. Satu server mungkin berisi beberapa database. 
+Untuk berinteraksi dengan database, kita harus 
+terlebih dahulu membuat koneksi dengan server. Kita 
+bisa bisa menggunakan fungsi mysql.connector.connect()
+
+mysql.connector.connect() memiliki banyak parameter
+yang bisa kita gunakan. Namun, yang paling sering 
+digunakan yaitu:
+
+[-] host     - mendefinisikan nama host atau
+               alamat IP dari MySQL Server
+[-] database - mendefinisikan nama database yang 
+               akan di hubungkan dengan MySQL 
+               Server
+[-] username - mendefinisikan nama pengguna yang 
+               digunakan untuk otentikasi dengan
+               MySQL Server
+[-] password - mendefinisikan Kata sandi untuk 
+               mengotentikasi pengguna dengan 
+               MySQL Server
+
+Langkah pertama untuk berinteraksi dengan MySQL Server
+adalah membuat koneksi.
+
+Contoh:
+
+import mysql.connector
+from mysql.connector import Error
+
+try:
+    with mysql.connector.connect(
+        host = 'localhost',
+        database = 'db_profesi',
+        username = 'root',
+        password = ''
+    ) as mydatabase:
+        if mydatabase.is_connected():
+            print('Koneksi berhasil')
+except Error as e:
+    print(f"Koneksi gagal, Eror: {e}")
+
+
+Referensi:
+
+1.  https://realpython.com/python-mysql/
+2.  https://pynative.com/python-mysql-database-
+    connection/
