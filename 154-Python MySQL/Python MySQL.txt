@@ -1,0 +1,18 @@
+Catatan:
+
+Python MySQL
+
+Kita bisa membuat aplikasi dengan bahasa pemrograman
+python yang terhubung dengan database. Untuk membuat
+ini kita perlu menginstal module, package atau library 
+yang menyediakan keperluan untuk berkomunikasi dengan 
+database.
+
+Python menyediakan berbgai macam module, package atau 
+library untuk keperluan ini misalnya seperti 
+mysql-connector, sqlalchemy, sqlite3, dan psycopg2.
+
+
+Referensi:
+
+1.  https://realpython.com/python-sql-libraries/
