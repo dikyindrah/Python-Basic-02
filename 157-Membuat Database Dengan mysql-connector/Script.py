@@ -7,7 +7,7 @@ try:
         username = 'root',
         password = ''
     ) as koneksi:
-        create_db_query = 'CREATE DATABASE db_profesi'
+        create_db_query = 'CREATE DATABASE db_online_movie_rating'
         show_db_query = 'SHOW DATABASES'
         with koneksi.cursor() as cursor:
             cursor.execute(create_db_query)
