@@ -1,0 +1,241 @@
+Catatan:
+
+Mengubah dan Menghapus Data Dengan mysql-connector
+
+Selain membuat dan membaca record pada tabel dari 
+database, kita juga bisa Mengubah dan Menghapus record
+tersebut.
+
+
+Mengubah Record
+
+Untuk mengubah record pada tabel kita perlu mendefinisikan 
+queri "UPDATE nama_tabel SET nama_kolom='data' WHERE 
+kondisi" kemudian mengirimnya ke cursor.execute().
+
+Contoh:
+
+import mysql.connector
+from mysql.connector import Error
+
+update_record_query = '''
+    UPDATE tbl_reviewers SET last_name='Cena' WHERE first_name='John'
+'''
+
+select_record_query = '''
+    SELECT * FROM tbl_reviewers WHERE first_name='John' 
+'''
+
+try:
+    with mysql.connector.connect(
+        host = 'localhost',
+        database = 'db_online_movie_rating',
+        username = 'root',
+        password = ''
+    ) as db_online_movie_rating:
+        if db_online_movie_rating.is_connected():
+            print('Koneksi berhasil\n')
+            with db_online_movie_rating.cursor() as cursor:
+                cursor.execute(update_record_query)
+                print('Record berhasil diubah')
+                cursor.execute(select_record_query)
+                result = cursor.fetchall()
+                print(result)
+                db_online_movie_rating.commit()
+except Error as e:
+    print(f"Koneksi gagal, Error: {e}")
+
+Output:
+
+Koneksi berhasil
+
+Record berhasil diubah
+[(3, 'John', 'Cena')]
+
+
+Atau kita bisa menggunakan cara berikut.
+
+Contoh:
+
+import mysql.connector 
+from mysql.connector import Error
+
+select_record_query = '''
+    SELECT * FROM tbl_reviewers
+'''
+
+update_record_query = '''
+    UPDATE tbl_reviewers SET first_name=%s, last_name=%s WHERE reviewer_id=%s
+'''
+
+try:
+    with mysql.connector.connect(
+        host = 'localhost',
+        database = 'db_online_movie_rating',
+        username = 'root',
+        password = ''
+    ) as db_online_movie_rating:
+        if db_online_movie_rating.is_connected():
+            print('Koneksi berhasil\n')
+            with db_online_movie_rating.cursor() as cursor:
+                cursor.execute(select_record_query)
+                result = cursor.fetchall()
+                print('tbl_reviewers\n')
+                for row in result:
+                    print(row)
+                
+                print('\nUpdate record from tbl_reviewers\n')
+                reviewer_id = str(input('Select reviewer_id: '))
+                new_first_name = str(input('new first_name: '))
+                new_last_name = str(input('new last_name: '))
+                val_record = (new_first_name, new_last_name, reviewer_id)
+                cursor.execute(update_record_query, val_record, multi=True)
+                db_online_movie_rating.commit()
+                
+                print('\ntbl_reviewers\n')
+                cursor.execute(select_record_query)
+                result = cursor.fetchall()
+                for row in result:
+                    print(row)
+
+except Error as e:
+    print(f"Koneksi gagal, Error: {e}")
+
+
+Output:
+
+tbl_reviewers
+
+(1, 'Diky', 'Indra')      
+(2, 'Mary', 'Cooper')     
+(3, 'John', 'Cena')       
+(4, 'Thomas', 'Stoneman') 
+(5, 'Penny', 'Hofstadter')
+(6, 'Mitchell', 'Marsh')  
+(7, 'Wyatt', 'Skaggs')    
+(8, 'Andre', 'Veiga')
+(9, 'Sheldon', 'Cooper')
+(10, 'Kimbra', 'Masters')
+(11, 'Kat', 'Dennings')
+(12, 'Bruce', 'Wayne')
+(13, 'Domingo', 'Cortes')
+
+Update record from tbl_reviewers
+
+Select reviewer_id: 2
+new first_name: Ardi
+new last_name: Wibowo
+
+tbl_reviewers
+
+(1, 'Diky', 'Indra')
+(2, 'Ardi', 'Wibowo')
+(3, 'John', 'Cena')
+(4, 'Thomas', 'Stoneman')
+(5, 'Penny', 'Hofstadter')
+(6, 'Mitchell', 'Marsh')
+(7, 'Wyatt', 'Skaggs')
+(8, 'Andre', 'Veiga')
+(9, 'Sheldon', 'Cooper')
+(10, 'Kimbra', 'Masters')
+(11, 'Kat', 'Dennings')
+(12, 'Bruce', 'Wayne')
+(13, 'Domingo', 'Cortes')
+
+
+Menghapus Record
+
+Untuk mengahpus record pada tabel kita perlu 
+mendefinisikan queri "DELETE FROM nama_tabel WHERE kondisi" 
+kemudian mengirimnya ke cursor.execute().
+
+Contoh:
+
+import mysql.connector 
+from mysql.connector import Error
+
+select_query = '''
+    SELECT * FROM tbl_ratings
+'''
+
+delete_query = '''
+    DELETE FROM tbl_ratings WHERE movie_id=%s AND reviewer_id=%s
+'''
+
+try:
+    with mysql.connector.connect(
+        host = 'localhost',
+        database = 'db_online_movie_rating',
+        username = 'root',
+        password = ''
+    ) as db_online_movie_rating:
+        if db_online_movie_rating.is_connected():
+            print('Koneksi berhasil\n')
+            with db_online_movie_rating.cursor() as cursor:
+                cursor.execute(select_query)
+                result = cursor.fetchall()
+                print('tbl_reviewers:\n')
+                print('movie_id, reviewer_id, rating')
+                for row in result:
+                    print(row)
+
+                print('\nDelete record')
+                movie_id = str(input('delete movie_id: '))
+                reviewer_id = str(input('delete reviewer_id: '))
+                val_record = (movie_id, reviewer_id)
+                cursor.execute(delete_query, val_record, multi=True)
+                db_online_movie_rating.commit()
+               
+                cursor.execute(select_query)
+                result = cursor.fetchall()
+                print('\ntbl_reviewers:\n')
+                print('movie_id, reviewer_id, rating')
+                for row in result:
+                    print(row)
+except Error as e:
+    print(f"Koneksi gagal, Error: {e}")
+
+
+Output:
+
+Koneksi berhasil
+
+tbl_reviewers:
+
+movie_id, reviewer_id, rating
+(1, 5, Decimal('6.4'))       
+(2, 4, Decimal('5.6'))       
+(3, 3, Decimal('6.3'))       
+(1, 2, Decimal('5.1'))       
+(1, 1, Decimal('5.0'))       
+(2, 6, Decimal('6.5'))       
+(3, 7, Decimal('8.5'))
+(2, 8, Decimal('9.7'))
+(3, 10, Decimal('9.9'))
+(1, 11, Decimal('8.7'))
+(2, 12, Decimal('9.9'))
+(3, 13, Decimal('5.1'))
+
+Delete record
+delete movie_id: 1
+delete reviewer_id: 5
+
+tbl_reviewers:
+
+movie_id, reviewer_id, rating
+(2, 4, Decimal('5.6'))
+(3, 3, Decimal('6.3'))
+(1, 2, Decimal('5.1'))
+(1, 1, Decimal('5.0'))
+(2, 6, Decimal('6.5'))
+(3, 7, Decimal('8.5'))
+(2, 8, Decimal('9.7'))
+(3, 10, Decimal('9.9'))
+(1, 11, Decimal('8.7'))
+(2, 12, Decimal('9.9'))
+(3, 13, Decimal('5.1'))
+
+
+Referensi:
+
+1. https://realpython.com/python-mysql/
